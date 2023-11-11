@@ -5,4 +5,5 @@ export const COLORS = {
   secondaryDark: '#5f43b2',
   black1: '#282b2b',
   purple1: '#bf80ff',
+  purple2: '#f2e6ff',
 };

@@ -8,6 +8,7 @@ const StyledProfile = styled.div`
   justify-content: center;
   margin: 0 auto;
   max-width: 72rem;
+  position: relative;
 
   h3 {
     font-weight: 400;
@@ -15,7 +16,7 @@ const StyledProfile = styled.div`
 `;
 const ImageContainer = styled.div`
   flex: 1;
-  z-index: 2;
+  z-index: 3;
 `;
 
 const StyledText = styled.div`
@@ -33,6 +34,7 @@ const StyledBox = styled.div`
   position: absolute;
   left: -15rem;
   padding-left: 15rem;
+  padding-right: 7rem;
 `;
 
 const StyledName = styled.span`
@@ -41,6 +43,22 @@ const StyledName = styled.span`
 const StyledUX = styled.span`
   color: ${COLORS.primaryDark};
   font-size: 2rem;
+`;
+
+const StyledLogo = styled.div`
+  position: absolute;
+  top: 3rem;
+  left: -9rem;
+  opacity: 0.3;
+`;
+const StyledCircle = styled.div`
+  position: absolute;
+  top: 18rem;
+  left: -6rem;
+  height: 10rem;
+  width: 10rem;
+  background-color: ${COLORS.purple2};
+  border-radius: 50%;
 `;
 
 const Profile = () => {
@@ -76,6 +94,15 @@ const Profile = () => {
           </h3>
         </StyledBox>
       </StyledText>
+      <StyledLogo>
+        <Image
+          alt='logo'
+          width='300'
+          height='300'
+          src='/assets/logo-light.png'
+        />
+      </StyledLogo>
+      <StyledCircle />
     </StyledProfile>
   );
 };
