@@ -1,0 +1,46 @@
+.fadeContainer {
+  position: relative;
+  padding-top: 15rem;
+}
+
+.fadeInText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.fadeIn {
+  opacity: 1;
+  font-size: 3em; /* Starting font size */
+  animation: fadeIn 1s forwards; /* Duration of 1s, stays in the end state after animation */
+}
+
+.fadeInOut {
+  opacity: 1;
+  font-size: 3em; /* Starting font size */
+  animation: fadeInOut 4s infinite; /* Change the duration according to your needs */
+
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+      font-size: 3em; /* Starting font size */
+    }
+    50% {
+      opacity: 1;
+      font-size: 2em; /* Ending font size */
+    }
+  }
+}
+
+.visible {
+  opacity: 1;
+  font-size: 3em; /* Starting font size */
+}
+
+.hidden {
+  opacity: 0;
+  font-size: 2em; /* Ending font size */
+}

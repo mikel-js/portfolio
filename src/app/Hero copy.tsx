@@ -3,37 +3,8 @@ import styled from 'styled-components';
 
 const StyledHero = styled.div`
   position: relative;
-  padding: 7rem;
 `;
 const StyledText = styled.div`
-  h1 {
-    opacity: 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 7rem; /* Starting font size */
-    animation: fadeInOut 4s;
-
-    @keyframes fadeInOut {
-      0%,
-      100% {
-        opacity: 1;
-        font-size: 7rem;
-      }
-      50% {
-        opacity: 1;
-        font-size: 5rem;
-      }
-      100% {
-        opacity: 1;
-        font-size: 7rem;
-      }
-    }
-  }
-`;
-
-const StyledText2 = styled.div`
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -55,14 +26,7 @@ const StyledText2 = styled.div`
   }
 `;
 
-const StyledSup = styled.span`
-  vertical-align: super;
-  font-size: 2rem;
-  position: relative;
-  top: -1.5rem;
-`;
-
-const Hero = () => {
+const YourComponent = () => {
   const texts = ['Excellence = Michael Castro'];
   const [isVisible, setIsVisible] = useState(true);
 
@@ -76,13 +40,9 @@ const Hero = () => {
 
   return (
     <StyledHero>
-      <StyledText>
-        <h1>
-          E = MC<StyledSup>2</StyledSup>
-        </h1>
-      </StyledText>
+      <h1>{isVisible && <StyledText>E = MC2</StyledText>}</h1>
     </StyledHero>
   );
 };
 
-export default Hero;
+export default YourComponent;
