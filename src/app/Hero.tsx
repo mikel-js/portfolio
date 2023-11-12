@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
+import Image from 'next/image';
 
 const fadeInOut = keyframes`
   0% {
@@ -13,11 +14,12 @@ const fadeInOut = keyframes`
 `;
 
 const StyledHero = styled.div`
-  padding: 7rem;
+  padding-top: 7rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 `;
 const StyledContent = styled.div`
   h1 {
@@ -51,6 +53,13 @@ const StyledSup = styled.span`
   top: -0.5rem;
 `;
 
+const StyledLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+`;
+const StyledLink = styled.a``;
+
 const Hero = () => {
   const texts = [
     <h2>
@@ -58,6 +67,18 @@ const Hero = () => {
     </h2>,
     <h2>
       E<StyledSmallText>nthusiasm</StyledSmallText>
+    </h2>,
+    <h2>
+      E<StyledSmallText>ffiency</StyledSmallText>
+    </h2>,
+    <h2>
+      E<StyledSmallText>xpertise</StyledSmallText>
+    </h2>,
+    <h2>
+      E<StyledSmallText>agerness to Learn</StyledSmallText>
+    </h2>,
+    <h2>
+      E<StyledSmallText>ffective Communicator</StyledSmallText>
     </h2>,
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -83,6 +104,19 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const externalLinks = [
+    {
+      name: 'LinkedIn',
+      src: '/assets/icon-linkedin.svg',
+      linkTo: 'https://www.linkedin.com/in/michael-castro-1331bb89/',
+    },
+    {
+      name: 'GitHub',
+      src: '/assets/icon-github.svg',
+      linkTo: 'https://github.com/mikel-js',
+    },
+  ];
+
   return (
     <StyledHero>
       <StyledFadingTextContainer>
@@ -97,9 +131,13 @@ const Hero = () => {
           </h1>
           <h2>Welcome to my Portfolio Site!</h2>
           <h3>Excited to see you here</h3>
-          {/* <StyledIcons>
-            
-          </StyledIcons> */}
+          <StyledLinks>
+            {externalLinks.map(({ name, src, linkTo }) => (
+              <StyledLink href={linkTo} target='_blank'>
+                <Image src={src} alt={name} width='80' height='80' />
+              </StyledLink>
+            ))}
+          </StyledLinks>
         </StyledContent>
       )}
     </StyledHero>
