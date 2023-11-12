@@ -21,6 +21,7 @@ const StyledHero = styled.div`
   align-items: center;
   text-align: center;
 `;
+
 const StyledContent = styled.div`
   h1 {
     font-size: 5rem;
