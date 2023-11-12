@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const fadeInOut = keyframes`
-  0%, 100% {
+  0% {
     opacity: 0;
     font-size: 2em;
   }
@@ -18,25 +18,7 @@ const StyledHero = styled.div`
 `;
 const StyledText = styled.div`
   h1 {
-    opacity: 1;
-    font-size: 5.5rem; /* Starting font size */
-    animation: fadeInOut 4s;
-
-    @keyframes fadeInOut {
-      0%,
-      100% {
-        opacity: 1;
-        font-size: 5.5rem;
-      }
-      50% {
-        opacity: 1;
-        font-size: 3rem;
-      }
-      100% {
-        opacity: 1;
-        font-size: 5.5rem;
-      }
-    }
+    font-size: 5rem;
   }
 `;
 
@@ -44,16 +26,19 @@ const StyledSmallText = styled.span`
   font-size: 3rem;
 `;
 
-const StyledText2Container = styled.div`
+const StyledFadingTextContainer = styled.div`
   align-items: center;
   justify-content: center;
-  height: 100vh;
 `;
 
-const StyledText2 = styled.div`
+const StyledFadingText = styled.div`
   font-size: 2em;
   opacity: 0;
-  animation: ${fadeInOut} 4s infinite forwards;
+  animation: ${fadeInOut} 5s infinite forwards;
+
+  h2 {
+    font-size: 5rem;
+  }
 `;
 
 const StyledSup = styled.span`
@@ -64,17 +49,21 @@ const StyledSup = styled.span`
 `;
 
 const Hero = () => {
-  const texts = ['Excellence', 'Enthusiasm', 'Experience', 'Energetic'];
-  const [isVisible, setIsVisible] = useState(false);
+  const texts = [
+    <h2>
+      E<StyledSmallText>xcellence</StyledSmallText>
+    </h2>,
+    <h2>
+      E<StyledSmallText>nthusiasm</StyledSmallText>
+    </h2>,
+    <h2>
+      E<StyledSmallText>xperience</StyledSmallText>
+    </h2>,
+    <h2>
+      E<StyledSmallText>nergetic</StyledSmallText>
+    </h2>,
+  ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(true);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -86,18 +75,16 @@ const Hero = () => {
 
   return (
     <StyledHero>
+      <StyledFadingTextContainer>
+        <StyledFadingText>{texts[currentTextIndex]}</StyledFadingText>
+      </StyledFadingTextContainer>
       <StyledText>
         <h1>
-          E = M<StyledSmallText>ichael</StyledSmallText>C
+          M<StyledSmallText>ichael</StyledSmallText>C
           <StyledSmallText>astro</StyledSmallText>
           <StyledSup>2</StyledSup>
         </h1>
       </StyledText>
-      {isVisible && (
-        <StyledText2Container>
-          <StyledText2>{texts[currentTextIndex]}</StyledText2>
-        </StyledText2Container>
-      )}
     </StyledHero>
   );
 };
