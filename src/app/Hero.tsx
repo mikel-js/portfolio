@@ -15,8 +15,11 @@ const fadeInOut = keyframes`
 const StyledHero = styled.div`
   padding: 7rem;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
-const StyledText = styled.div`
+const StyledContent = styled.div`
   h1 {
     font-size: 5rem;
   }
@@ -34,7 +37,7 @@ const StyledFadingTextContainer = styled.div`
 const StyledFadingText = styled.div`
   font-size: 2em;
   opacity: 0;
-  animation: ${fadeInOut} 5s infinite forwards;
+  animation: ${fadeInOut} 2s infinite forwards;
 
   h2 {
     font-size: 5rem;
@@ -45,7 +48,7 @@ const StyledSup = styled.span`
   vertical-align: super;
   font-size: 2rem;
   position: relative;
-  top: -1.5rem;
+  top: -0.5rem;
 `;
 
 const Hero = () => {
@@ -56,19 +59,26 @@ const Hero = () => {
     <h2>
       E<StyledSmallText>nthusiasm</StyledSmallText>
     </h2>,
-    <h2>
-      E<StyledSmallText>xperience</StyledSmallText>
-    </h2>,
-    <h2>
-      E<StyledSmallText>nergetic</StyledSmallText>
-    </h2>,
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [nameIsVisible, setNameIsVisible] = useState(false);
+  const [textArr, setTextArr] = useState([
+    <h2>
+      E = MC<StyledSup>2</StyledSup>
+    </h2>,
+  ]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setNameIsVisible(true);
+      setTextArr(texts);
+    }, 2000);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
@@ -76,15 +86,22 @@ const Hero = () => {
   return (
     <StyledHero>
       <StyledFadingTextContainer>
-        <StyledFadingText>{texts[currentTextIndex]}</StyledFadingText>
+        <StyledFadingText>{textArr[currentTextIndex]}</StyledFadingText>
       </StyledFadingTextContainer>
-      <StyledText>
-        <h1>
-          M<StyledSmallText>ichael</StyledSmallText>C
-          <StyledSmallText>astro</StyledSmallText>
-          <StyledSup>2</StyledSup>
-        </h1>
-      </StyledText>
+      {nameIsVisible && (
+        <StyledContent>
+          <h1>
+            M<StyledSmallText>ichael </StyledSmallText>C
+            <StyledSmallText>astro</StyledSmallText>
+            <StyledSup>2</StyledSup>
+          </h1>
+          <h2>Welcome to my Portfolio Site!</h2>
+          <h3>Excited to see you here</h3>
+          {/* <StyledIcons>
+            
+          </StyledIcons> */}
+        </StyledContent>
+      )}
     </StyledHero>
   );
 };
