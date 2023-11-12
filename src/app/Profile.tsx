@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import { COLORS } from '../constants/colors';
 import { BREAKPOINTS } from '../constants/breakpoints';
+import ScrollRevealComponent from './ScrollComponent';
 
 const StyledProfile = styled.div`
   display: flex;
@@ -101,15 +102,17 @@ const Profile = () => {
       </ImageContainer>
       <StyledText>
         <StyledInfo>
-          <h1>
-            Hi! I am <StyledName>Michael</StyledName>
-          </h1>
-          <h3>
-            I am a software engineer,
-            <br /> with more than 3 years of
-            <br />
-            professional experience.
-          </h3>
+          <ScrollRevealComponent>
+            <h1>
+              Hi! I am <StyledName>Michael</StyledName>
+            </h1>
+            <h3>
+              I am a software engineer,
+              <br /> with more than 3 years of
+              <br />
+              professional experience.
+            </h3>
+          </ScrollRevealComponent>
         </StyledInfo>
         <StyledBox>
           <h3>
