@@ -1,16 +1,12 @@
 import { COLORS } from '@/constants/colors';
 import React from 'react';
 import styled from 'styled-components';
-import Tilt from 'react-parallax-tilt';
-import Image from 'next/image';
+import ImageTilt from './ImageTilt';
 
 const StyledImageContainer = styled.div`
-  display: inline-flex;
-  position: relative;
-  h1 {
-    position: absolute;
-    top: 50%;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledProjects = styled.div`
@@ -19,24 +15,20 @@ const StyledProjects = styled.div`
 `;
 
 const Projects: React.FC = () => {
+  const projectsArr = [
+    {
+      src: '/assets/trivia.png',
+      title: 'Triviathlon',
+      desc: 'Trivia + Marathon',
+    },
+  ];
   return (
     <StyledProjects>
       <h2>Recent Projects</h2>
       <StyledImageContainer>
-        <Tilt
-          perspective={500}
-          glareEnable={true}
-          glareMaxOpacity={0.45}
-          scale={1}
-        >
-          <Image
-            src='/assets/profile-pic.png'
-            alt='project'
-            width={400}
-            height={400}
-          />
-          <h1>TEST</h1>
-        </Tilt>
+        {projectsArr.map(({ src, title, desc }) => (
+          <ImageTilt src={src} title={title} desc={desc} />
+        ))}
       </StyledImageContainer>
     </StyledProjects>
   );
