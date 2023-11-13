@@ -6,4 +6,5 @@ export const COLORS = {
   black1: '#282b2b',
   purple1: '#bf80ff',
   purple2: '#f2e6ff',
+  purple3: '#253064',
 };

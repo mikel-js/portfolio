@@ -2,13 +2,15 @@
 import React from 'react';
 import Hero from './Hero';
 import Profile from './Profile';
+import Projects from './Projects';
 
 const page = () => {
   return (
-    <div>
+    <>
       <Hero />
       <Profile />
-    </div>
+      <Projects />
+    </>
   );
 };
 

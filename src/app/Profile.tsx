@@ -89,7 +89,7 @@ const StyledCircle = styled.div`
   }
 `;
 
-const Profile = () => {
+const Profile: React.FC = () => {
   return (
     <StyledProfile>
       <ImageContainer>
@@ -115,13 +115,15 @@ const Profile = () => {
           </ScrollRevealComponent>
         </StyledInfo>
         <StyledBox>
-          <h3>
-            I help create seamless and
-            <br />
-            <StyledUX>excellent user experience</StyledUX>
-            <br />
-            by crafting elegant code.
-          </h3>
+          <ScrollRevealComponent direction='right'>
+            <h3>
+              I help create seamless and
+              <br />
+              <StyledUX>excellent user experience</StyledUX>
+              <br />
+              by crafting elegant code.
+            </h3>
+          </ScrollRevealComponent>
         </StyledBox>
       </StyledText>
       <StyledLogo>

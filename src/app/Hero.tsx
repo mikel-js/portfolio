@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
+import { BREAKPOINTS } from '../constants/breakpoints';
 
 const fadeInOut = keyframes`
   0% {
@@ -14,7 +15,6 @@ const fadeInOut = keyframes`
 `;
 
 const StyledHero = styled.div`
-  padding-top: 7rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,13 @@ const StyledHero = styled.div`
 
 const StyledContent = styled.div`
   h1 {
-    font-size: 5rem;
+    font-size: 3rem;
+  }
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    h1 {
+      font-size: 5rem;
+    }
   }
 `;
 
@@ -38,12 +44,22 @@ const StyledFadingTextContainer = styled.div`
 `;
 
 const StyledFadingText = styled.div`
-  font-size: 2em;
+  padding-top: 1rem;
+  font-size: 2rem;
   opacity: 0;
   animation: ${fadeInOut} 2s infinite forwards;
+  min-height: 7.25rem;
 
   h2 {
-    font-size: 5rem;
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    padding-top: 5rem;
+    h2 {
+      font-size: 5rem;
+    }
   }
 `;
 
@@ -61,7 +77,7 @@ const StyledLinks = styled.div`
 `;
 const StyledLink = styled.a``;
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const texts = [
     <h2>
       E<StyledSmallText>xcellence</StyledSmallText>
