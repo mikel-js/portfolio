@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import Hero from './Hero';
-import Profile from './Profile';
-import Projects from './Projects';
+import Hero from './hero/Hero';
+import Profile from './profile/Profile';
+import Projects from './projects/Projects';
 
 const page = () => {
   return (

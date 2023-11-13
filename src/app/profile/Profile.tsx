@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { COLORS } from '../constants/colors';
-import { BREAKPOINTS } from '../constants/breakpoints';
+import { COLORS } from '../../constants/colors';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 import ScrollRevealComponent from './ScrollComponent';
 
 const StyledProfile = styled.div`

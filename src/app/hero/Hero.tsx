@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
-import { BREAKPOINTS } from '../constants/breakpoints';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const fadeInOut = keyframes`
   0% {

@@ -4,11 +4,14 @@ import styled from 'styled-components';
 import Tilt from 'react-parallax-tilt';
 import Image from 'next/image';
 
-const options = {
-  max: 10,
-  perspective: 1000,
-  scale: 1.05,
-};
+const StyledImageContainer = styled.div`
+  display: inline-flex;
+  position: relative;
+  h1 {
+    position: absolute;
+    top: 50%;
+  }
+`;
 
 const StyledProjects = styled.div`
   background-color: ${COLORS.purple3};
@@ -19,19 +22,12 @@ const Projects: React.FC = () => {
   return (
     <StyledProjects>
       <h2>Recent Projects</h2>
-      <div
-        style={{
-          height: '300px',
-          width: '300px',
-          backgroundColor: 'darkgreen',
-        }}
-      >
+      <StyledImageContainer>
         <Tilt
           perspective={500}
           glareEnable={true}
           glareMaxOpacity={0.45}
-          scale={1.02}
-          gyroscope={true}
+          scale={1}
         >
           <Image
             src='/assets/profile-pic.png'
@@ -39,8 +35,9 @@ const Projects: React.FC = () => {
             width={400}
             height={400}
           />
+          <h1>TEST</h1>
         </Tilt>
-      </div>
+      </StyledImageContainer>
     </StyledProjects>
   );
 };
