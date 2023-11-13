@@ -7,6 +7,7 @@ const StyledImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 const StyledProjects = styled.div`
@@ -19,15 +20,34 @@ const Projects: React.FC = () => {
     {
       src: '/assets/trivia.png',
       title: 'Triviathlon',
-      desc: 'Trivia + Marathon',
+      desc: 'This project leveraged the Open Trivia Database API (https://opentdb.com/) to fetch trivia questions dynamically. Made using react, TypeScript and Styled components.',
+      link: 'https://triviathlon.netlify.app/',
+    },
+    {
+      src: '/assets/cheesy.jpg',
+      title: 'Jokes',
+      desc: 'A page with not/funny jokes. Made with React and deployed using AWS amplify.',
+      link: 'https://master.d3sqozxqtnz8cc.amplifyapp.com/',
+    },
+    {
+      src: '/assets/guess.jpg',
+      title: 'Guessing game',
+      desc: 'One of my first projects. A simple guessing game and straighforward UI',
+      link: 'https://mikelgame.netlify.app/',
     },
   ];
   return (
     <StyledProjects>
-      <h2>Recent Projects</h2>
+      <h2>Projects</h2>
       <StyledImageContainer>
-        {projectsArr.map(({ src, title, desc }) => (
-          <ImageTilt src={src} title={title} desc={desc} />
+        {projectsArr.map(({ src, title, desc, link }) => (
+          <ImageTilt
+            key={title}
+            src={src}
+            title={title}
+            desc={desc}
+            link={link}
+          />
         ))}
       </StyledImageContainer>
     </StyledProjects>
