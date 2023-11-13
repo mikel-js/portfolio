@@ -7,8 +7,8 @@ import Projects from './Projects';
 const page = () => {
   return (
     <>
-      <Hero />
-      <Profile />
+      {/* <Hero />
+      <Profile /> */}
       <Projects />
     </>
   );
