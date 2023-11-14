@@ -30,12 +30,18 @@ const StyledArrowRight = styled(ArrowRight)`
   right: 5%;
 `;
 
-const StyledCircleContainer = styled.div``;
-const StyledCircle = styled.div`
+const StyledCircleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+`;
+
+const StyledCircle = styled.div<{ isActive: boolean }>`
   height: 1rem;
   width: 1rem;
   border-radius: 50%;
   border: 1px solid ${COLORS.primary};
+  background-color: ${({ isActive }) => isActive && COLORS.purple1};
 `;
 
 const Projects: React.FC = () => {
@@ -60,6 +66,8 @@ const Projects: React.FC = () => {
       link: 'https://mikelgame.netlify.app/',
     },
   ];
+
+  const handlePageClick = (index: number) => setActiveIndex(index);
 
   const handleNextClick = () => {
     if (activeIndex + 1 === projectsArr.length) {
@@ -93,7 +101,11 @@ const Projects: React.FC = () => {
       </StyledImageContainer>
       <StyledCircleContainer>
         {projectsArr.map((props, i) => (
-          <StyledCircle key={i} />
+          <StyledCircle
+            key={i}
+            onClick={() => handlePageClick(i)}
+            isActive={i === activeIndex}
+          />
         ))}
       </StyledCircleContainer>
       <StyledArrowLeft width={80} height={80} onClick={handlePreviousClick} />
