@@ -1,7 +1,10 @@
 import { COLORS } from '@/constants/colors';
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
 import ImageTilt from './ImageTilt';
+import Image from 'next/image';
+import ArrowLeft from './arrowLeft';
+import ArrowRight from './arrowRight';
 
 const StyledImageContainer = styled.div`
   display: flex;
@@ -11,9 +14,23 @@ const StyledImageContainer = styled.div`
 `;
 
 const StyledProjects = styled.div`
-  background-color: ${COLORS.purple3};
-  color: ${COLORS.primaryDark};
+  color: ${COLORS.primary};
+  position: relative;
 `;
+
+const StyledArrowLeft = styled(ArrowLeft)`
+  position: absolute;
+  top: 40%;
+  left: 5%;
+`;
+
+const StyledArrowRight = styled(ArrowRight)`
+  position: absolute;
+  top: 40%;
+  right: 5%;
+`;
+
+const StyledCircle = styled.div``;
 
 const Projects: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -37,21 +54,41 @@ const Projects: React.FC = () => {
       link: 'https://mikelgame.netlify.app/',
     },
   ];
+
+  const handleNextClick = () => {
+    if (activeIndex + 1 === projectsArr.length) {
+      setActiveIndex(0);
+    } else {
+      setActiveIndex((prev) => (prev += 1));
+    }
+  };
+
+  const handlePreviousClick = () => {
+    if (activeIndex === 0) {
+      setActiveIndex(projectsArr.length - 1);
+    } else {
+      setActiveIndex((prev) => (prev -= 1));
+    }
+  };
   return (
     <StyledProjects>
       <h2>Projects</h2>
       <StyledImageContainer>
         {projectsArr.map(({ src, title, desc, link }, index) => (
-          <ImageTilt
-            isActive={activeIndex === index}
-            key={title}
-            src={src}
-            title={title}
-            desc={desc}
-            link={link}
-          />
+          <Fragment key={title}>
+            <ImageTilt
+              isActive={activeIndex === index}
+              src={src}
+              title={title}
+              desc={desc}
+              link={link}
+            />
+            <StyledCircle />
+          </Fragment>
         ))}
       </StyledImageContainer>
+      <StyledArrowLeft width={80} height={80} onClick={handlePreviousClick} />
+      <StyledArrowRight width={80} height={80} onClick={handleNextClick} />
     </StyledProjects>
   );
 };

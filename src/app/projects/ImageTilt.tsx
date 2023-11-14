@@ -34,6 +34,15 @@ const StyledImageTilt = styled.div<{ isActive: boolean }>`
 
 const StyledImage = styled.img`
   width: 100%;
+  height: 12.875rem;
+
+  @media (min-width: ${BREAKPOINTS.sm}) {
+    height: 22.875rem;
+  }
+
+  @media (min-width: ${BREAKPOINTS.lg}) {
+    height: 32.875rem;
+  }
 `;
 
 const ImageTilt: React.FC<ImageTiltProps> = ({
