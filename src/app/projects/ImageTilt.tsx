@@ -5,13 +5,16 @@ import { BREAKPOINTS } from '../../constants/breakpoints';
 import { COLORS } from '@/constants/colors';
 
 type ImageTiltProps = {
+  isActive: boolean;
   src: string;
   title: string;
   desc: string;
   link: string;
 };
 
-const StyledImageTilt = styled.div`
+const StyledImageTilt = styled.div<{ isActive: boolean }>`
+  display: ${({ isActive }) => (isActive ? 'block' : 'none')};
+
   padding: 2rem;
   max-width: 33.75rem;
 
@@ -33,9 +36,15 @@ const StyledImage = styled.img`
   width: 100%;
 `;
 
-const ImageTilt: React.FC<ImageTiltProps> = ({ src, title, desc, link }) => {
+const ImageTilt: React.FC<ImageTiltProps> = ({
+  isActive,
+  src,
+  title,
+  desc,
+  link,
+}) => {
   return (
-    <StyledImageTilt>
+    <StyledImageTilt isActive={isActive}>
       <Tilt
         perspective={1000}
         glareEnable={true}

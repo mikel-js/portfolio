@@ -1,5 +1,5 @@
 import { COLORS } from '@/constants/colors';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ImageTilt from './ImageTilt';
 
@@ -16,6 +16,7 @@ const StyledProjects = styled.div`
 `;
 
 const Projects: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   const projectsArr = [
     {
       src: '/assets/trivia.png',
@@ -40,8 +41,9 @@ const Projects: React.FC = () => {
     <StyledProjects>
       <h2>Projects</h2>
       <StyledImageContainer>
-        {projectsArr.map(({ src, title, desc, link }) => (
+        {projectsArr.map(({ src, title, desc, link }, index) => (
           <ImageTilt
+            isActive={activeIndex === index}
             key={title}
             src={src}
             title={title}
