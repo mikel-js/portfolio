@@ -19,7 +19,7 @@ const StyledImageTilt = styled.div<{ isActive: boolean }>`
   max-width: 33.75rem;
 
   p {
-    font-size: 1.5rem;
+    font-size: 0.7rem;
   }
 
   a {
@@ -29,6 +29,10 @@ const StyledImageTilt = styled.div<{ isActive: boolean }>`
 
   @media (min-width: ${BREAKPOINTS.lg}) {
     max-width: 58rem;
+
+    p {
+      font-size: 1.5rem;
+    }
   }
 `;
 

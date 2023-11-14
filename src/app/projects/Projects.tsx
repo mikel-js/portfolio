@@ -30,7 +30,13 @@ const StyledArrowRight = styled(ArrowRight)`
   right: 5%;
 `;
 
-const StyledCircle = styled.div``;
+const StyledCircleContainer = styled.div``;
+const StyledCircle = styled.div`
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  border: 1px solid ${COLORS.primary};
+`;
 
 const Projects: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -75,18 +81,21 @@ const Projects: React.FC = () => {
       <h2>Projects</h2>
       <StyledImageContainer>
         {projectsArr.map(({ src, title, desc, link }, index) => (
-          <Fragment key={title}>
-            <ImageTilt
-              isActive={activeIndex === index}
-              src={src}
-              title={title}
-              desc={desc}
-              link={link}
-            />
-            <StyledCircle />
-          </Fragment>
+          <ImageTilt
+            isActive={activeIndex === index}
+            key={name}
+            src={src}
+            title={title}
+            desc={desc}
+            link={link}
+          />
         ))}
       </StyledImageContainer>
+      <StyledCircleContainer>
+        {projectsArr.map((props, i) => (
+          <StyledCircle key={i} />
+        ))}
+      </StyledCircleContainer>
       <StyledArrowLeft width={80} height={80} onClick={handlePreviousClick} />
       <StyledArrowRight width={80} height={80} onClick={handleNextClick} />
     </StyledProjects>
