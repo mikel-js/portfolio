@@ -1,8 +1,7 @@
 import { COLORS } from '@/constants/colors';
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ImageTilt from './ImageTilt';
-import Image from 'next/image';
 import ArrowLeft from './arrowLeft';
 import ArrowRight from './arrowRight';
 
@@ -19,12 +18,14 @@ const StyledProjects = styled.div`
 `;
 
 const StyledArrowLeft = styled(ArrowLeft)`
+  width: 3rem;
   position: absolute;
   top: 40%;
   left: 5%;
 `;
 
 const StyledArrowRight = styled(ArrowRight)`
+  width: 3rem;
   position: absolute;
   top: 40%;
   right: 5%;
@@ -91,7 +92,6 @@ const Projects: React.FC = () => {
         {projectsArr.map(({ src, title, desc, link }, index) => (
           <ImageTilt
             isActive={activeIndex === index}
-            key={name}
             src={src}
             title={title}
             desc={desc}
@@ -108,8 +108,8 @@ const Projects: React.FC = () => {
           />
         ))}
       </StyledCircleContainer>
-      <StyledArrowLeft width={80} height={80} onClick={handlePreviousClick} />
-      <StyledArrowRight width={80} height={80} onClick={handleNextClick} />
+      <StyledArrowLeft onClick={handlePreviousClick} />
+      <StyledArrowRight onClick={handleNextClick} />
     </StyledProjects>
   );
 };
