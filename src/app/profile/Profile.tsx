@@ -53,7 +53,10 @@ const StyledBox = styled.div`
     position: absolute;
     left: -15rem;
     padding-left: 15rem;
-    padding-right: 10rem;
+  }
+
+  @media (min-width: ${BREAKPOINTS.xl}) {
+    padding-right: 7rem;
   }
 `;
 

@@ -4,19 +4,7 @@ import styled from 'styled-components';
 import ImageTilt from './ImageTilt';
 import ArrowLeft from './arrowLeft';
 import ArrowRight from './arrowRight';
-import css from 'styled-jsx/css';
 import { BREAKPOINTS } from '@/constants/breakpoints';
-
-const arrowStyles: any = css`
-  width: 3rem;
-  position: absolute;
-  top: 40%;
-  display: none;
-
-  @media (min-width: ${BREAKPOINTS.md}) {
-    display: block;
-  }
-`;
 
 const StyledImageContainer = styled.div`
   display: flex;
@@ -31,12 +19,26 @@ const StyledProjects = styled.div`
 `;
 
 const StyledArrowLeft = styled(ArrowLeft)`
-  ${arrowStyles}
+  width: 3rem;
+  position: absolute;
+  top: 40%;
+  display: none;
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    display: block;
+  }
   left: 5%;
 `;
 
 const StyledArrowRight = styled(ArrowRight)`
-  ${arrowStyles}
+  width: 3rem;
+  position: absolute;
+  top: 40%;
+  display: none;
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    display: block;
+  }
   right: 5%;
 `;
 
