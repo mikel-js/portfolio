@@ -2,17 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 import { BREAKPOINTS } from '../../constants/breakpoints';
-
-const fadeInOut = keyframes`
-  0% {
-    opacity: 0;
-    font-size: 2em;
-  }
-  50% {
-    opacity: 1;
-    font-size: 3em;
-  }
-`;
+import { Fade } from 'react-awesome-reveal';
 
 const StyledHero = styled.div`
   height: 100vh;
@@ -43,11 +33,9 @@ const StyledFadingTextContainer = styled.div`
   justify-content: center;
 `;
 
-const StyledFadingText = styled.div`
+const StyledFade = styled(Fade)`
   padding-top: 1rem;
   font-size: 2rem;
-  opacity: 0;
-  animation: ${fadeInOut} 2s infinite forwards;
   min-height: 7.25rem;
 
   h2 {
@@ -137,7 +125,7 @@ const Hero: React.FC = () => {
   return (
     <StyledHero>
       <StyledFadingTextContainer>
-        <StyledFadingText>{textArr[currentTextIndex]}</StyledFadingText>
+        <StyledFade cascade>{textArr[currentTextIndex]}</StyledFade>
       </StyledFadingTextContainer>
       {nameIsVisible && (
         <StyledContent>
