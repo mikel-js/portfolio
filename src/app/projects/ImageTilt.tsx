@@ -49,6 +49,13 @@ const StyledImage = styled.img`
   }
 `;
 
+const StyledTextContainer = styled.div`
+  height: 2rem;
+  @media (min-width: ${BREAKPOINTS.lg}) {
+    height: 5.4375rem;
+  }
+`;
+
 const ImageTilt: React.FC<ImageTiltProps> = ({
   isActive,
   src,
@@ -66,12 +73,14 @@ const ImageTilt: React.FC<ImageTiltProps> = ({
       >
         <StyledImage src={src} alt={title} />
       </Tilt>
-      <p>
-        {desc}{' '}
-        <a href={link} target='_blank'>
-          Link to the project.
-        </a>
-      </p>
+      <StyledTextContainer>
+        <p>
+          {desc}{' '}
+          <a href={link} target='_blank'>
+            Link to the project.
+          </a>
+        </p>
+      </StyledTextContainer>
     </StyledImageTilt>
   );
 };

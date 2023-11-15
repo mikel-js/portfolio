@@ -6,16 +6,21 @@ import ArrowLeft from './arrowLeft';
 import ArrowRight from './arrowRight';
 import { BREAKPOINTS } from '@/constants/breakpoints';
 
+const StyledProjects = styled.div`
+  color: ${COLORS.primary};
+  position: relative;
+  padding: 3rem 0;
+`;
+const StyledContainer = styled.div`
+  max-width: 72rem;
+  margin: 0 auto;
+`;
+
 const StyledImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`;
-
-const StyledProjects = styled.div`
-  color: ${COLORS.primary};
-  position: relative;
 `;
 
 const StyledArrowLeft = styled(ArrowLeft)`
@@ -98,29 +103,31 @@ const Projects: React.FC = () => {
   };
   return (
     <StyledProjects>
-      <h2>Projects</h2>
-      <StyledImageContainer>
-        {projectsArr.map(({ src, title, desc, link }, index) => (
-          <ImageTilt
-            isActive={activeIndex === index}
-            src={src}
-            title={title}
-            desc={desc}
-            link={link}
-          />
-        ))}
-      </StyledImageContainer>
-      <StyledCircleContainer>
-        {projectsArr.map((props, i) => (
-          <StyledCircle
-            key={i}
-            onClick={() => handlePageClick(i)}
-            isActive={i === activeIndex}
-          />
-        ))}
-      </StyledCircleContainer>
-      <StyledArrowLeft onClick={handlePreviousClick} />
-      <StyledArrowRight onClick={handleNextClick} />
+      <StyledContainer>
+        <h2>Projects</h2>
+        <StyledImageContainer>
+          {projectsArr.map(({ src, title, desc, link }, index) => (
+            <ImageTilt
+              isActive={activeIndex === index}
+              src={src}
+              title={title}
+              desc={desc}
+              link={link}
+            />
+          ))}
+        </StyledImageContainer>
+        <StyledCircleContainer>
+          {projectsArr.map((props, i) => (
+            <StyledCircle
+              key={i}
+              onClick={() => handlePageClick(i)}
+              isActive={i === activeIndex}
+            />
+          ))}
+        </StyledCircleContainer>
+        <StyledArrowLeft onClick={handlePreviousClick} />
+        <StyledArrowRight onClick={handleNextClick} />
+      </StyledContainer>
     </StyledProjects>
   );
 };
