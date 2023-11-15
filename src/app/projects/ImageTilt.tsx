@@ -14,8 +14,6 @@ type ImageTiltProps = {
 
 const StyledImageTilt = styled.div<{ isActive: boolean }>`
   display: ${({ isActive }) => (isActive ? 'block' : 'none')};
-
-  padding: 2rem;
   max-width: 33.75rem;
 
   p {

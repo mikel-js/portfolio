@@ -5,15 +5,12 @@ import ImageTilt from './ImageTilt';
 import ArrowLeft from './arrowLeft';
 import ArrowRight from './arrowRight';
 import { BREAKPOINTS } from '@/constants/breakpoints';
+import Container from '../base/Container';
 
 const StyledProjects = styled.div`
   color: ${COLORS.primary};
   position: relative;
   padding: 3rem 0;
-`;
-const StyledContainer = styled.div`
-  max-width: 72rem;
-  margin: 0 auto;
 `;
 
 const StyledImageContainer = styled.div`
@@ -103,7 +100,7 @@ const Projects: React.FC = () => {
   };
   return (
     <StyledProjects>
-      <StyledContainer>
+      <Container>
         <h2>Projects</h2>
         <StyledImageContainer>
           {projectsArr.map(({ src, title, desc, link }, index) => (
@@ -127,7 +124,7 @@ const Projects: React.FC = () => {
         </StyledCircleContainer>
         <StyledArrowLeft onClick={handlePreviousClick} />
         <StyledArrowRight onClick={handleNextClick} />
-      </StyledContainer>
+      </Container>
     </StyledProjects>
   );
 };
