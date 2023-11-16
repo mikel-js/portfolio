@@ -10,13 +10,22 @@ const StyledTechStacks = styled.div``;
 
 const StyledContainer = styled(Container)`
   display: flex;
+  flex-wrap: wrap;
+`;
+
+const StyledIconContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
 `;
 
 const StyledIcon = styled.div`
   display: inline-flex;
-  flex-direction: column;
-  width: 6.25rem;
-  height: 6.25rem;
+  justify-content: center;
+  align-items: center;
+  width: 7.25rem;
+  height: 7.25rem;
+  background-color: black;
+  border-radius: 50%;
 `;
 
 const TechStacks: React.FC = ({}) => {
@@ -24,12 +33,12 @@ const TechStacks: React.FC = ({}) => {
     <StyledTechStacks>
       <StyledContainer>
         {iconArray.map(({ name, src }) => (
-          <>
+          <StyledIconContainer>
             <StyledIcon key={name}>
-              <Image alt={name} src={src} width='80' height='80' />
+              <Image alt={name} src={src} width='60' height='60' />
             </StyledIcon>
             <p>{name}</p>
-          </>
+          </StyledIconContainer>
         ))}
       </StyledContainer>
     </StyledTechStacks>
