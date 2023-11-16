@@ -11,8 +11,11 @@ interface ContainerProps {
   children: ReactNode;
 }
 
-const Container: React.FC<ContainerProps> = ({ children }: ContainerProps) => {
-  return <StyledDiv>{children}</StyledDiv>;
+const Container: React.FC<ContainerProps> = ({
+  children,
+  ...rest
+}: ContainerProps) => {
+  return <StyledDiv {...rest}>{children}</StyledDiv>;
 };
 
 export default Container;
