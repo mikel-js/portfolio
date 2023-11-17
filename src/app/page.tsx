@@ -8,13 +8,13 @@ import Copyright from './copyright/Copyright';
 
 const page = () => {
   return (
-    <>
+    <div className='wrapper'>
       <Hero />
       <Profile />
       <Projects />
       <TechStacks />
       <Copyright />
-    </>
+    </div>
   );
 };
 

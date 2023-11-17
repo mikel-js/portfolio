@@ -10,9 +10,12 @@ const StyledHero = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-image: url('assets/parallax/night.jpg');
 `;
 
 const StyledContent = styled.div`
+  position: relative;
+  z-index: 2;
   h1 {
     font-size: 3rem;
   }
@@ -31,6 +34,8 @@ const StyledSmallText = styled.span`
 const StyledFadingTextContainer = styled.div`
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 `;
 
 const StyledFade = styled(Fade)`
@@ -64,6 +69,17 @@ const StyledLinks = styled.div`
   gap: 2rem;
 `;
 const StyledLink = styled.a``;
+
+const StyledHelsinki = styled.img`
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  bottom: 0;
+`;
+const StyledMoon = styled.img`
+  position: absolute;
+`;
+const StyledPier = styled.img``;
 
 const Hero: React.FC = () => {
   const texts = [
@@ -124,6 +140,8 @@ const Hero: React.FC = () => {
 
   return (
     <StyledHero>
+      <StyledHelsinki src='/assets/parallax/helsinki.png' alt='helsinki' />
+      <StyledMoon src='/assets/parallax/moon.png' alt='moon' />
       <StyledFadingTextContainer>
         <StyledFade cascade duration={2000}>
           {textArr[currentTextIndex]}
