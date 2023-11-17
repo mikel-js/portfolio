@@ -6,13 +6,14 @@ import { Fade } from 'react-awesome-reveal';
 
 const StyledHero = styled.div`
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: url('assets/parallax/night.jpg') no-repeat center center fixed;
-  background-size: cover;
+
   transform-style: preserve-3d;
+  position: relative;
 `;
 
 const StyledContent = styled.div`
@@ -72,25 +73,29 @@ const StyledLinks = styled.div`
 `;
 const StyledLink = styled.a``;
 
+const StyledBg = styled.div`
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+`;
+
 const StyledHelsinki = styled.img`
   position: absolute;
   height: 100vh;
   width: 100vw;
-  bottom: 0;
+  top: 0;
+  left: 0;
   object-fit: cover;
-  transform-styled: preserve-3d;
-  transform: translateZ(-0.75rem) scale(2);
+  z-index: -1;
+  transform: translateZ(-10px) scale(2);
 `;
 const StyledMoon = styled.img`
   position: absolute;
   top: 10rem;
   right: 20rem;
   width: 10rem;
-`;
-const StyledPier = styled.img`
-  position: absolute;
-  bottom: 0;
-  transform: translateZ(-0.3125rem) scale(1.3);
+  z-index: -1;
+  transform: translateZ(-5px) scale(1);
 `;
 
 const Hero: React.FC = () => {
@@ -154,7 +159,7 @@ const Hero: React.FC = () => {
     <StyledHero>
       <StyledHelsinki src='/assets/parallax/helsinki.png' alt='helsinki' />
       <StyledMoon src='/assets/parallax/moon.png' alt='moon' />
-      <StyledPier src='/assets/parallax/pier.png' alt='pier' />
+
       <StyledFadingTextContainer>
         <StyledFade cascade duration={2000}>
           {textArr[currentTextIndex]}

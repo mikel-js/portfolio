@@ -17,5 +17,5 @@ h3 {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  perspective: 0.75rem;
+  perspective: 10px;
 }
