@@ -10,7 +10,9 @@ const StyledHero = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-image: url('assets/parallax/night.jpg');
+  background: url('assets/parallax/night.jpg') no-repeat center center fixed;
+  background-size: cover;
+  transform-style: preserve-3d;
 `;
 
 const StyledContent = styled.div`
@@ -75,11 +77,21 @@ const StyledHelsinki = styled.img`
   height: 100vh;
   width: 100vw;
   bottom: 0;
+  object-fit: cover;
+  transform-styled: preserve-3d;
+  transform: translateZ(-0.75rem) scale(2);
 `;
 const StyledMoon = styled.img`
   position: absolute;
+  top: 10rem;
+  right: 20rem;
+  width: 10rem;
 `;
-const StyledPier = styled.img``;
+const StyledPier = styled.img`
+  position: absolute;
+  bottom: 0;
+  transform: translateZ(-0.3125rem) scale(1.3);
+`;
 
 const Hero: React.FC = () => {
   const texts = [
@@ -142,6 +154,7 @@ const Hero: React.FC = () => {
     <StyledHero>
       <StyledHelsinki src='/assets/parallax/helsinki.png' alt='helsinki' />
       <StyledMoon src='/assets/parallax/moon.png' alt='moon' />
+      <StyledPier src='/assets/parallax/pier.png' alt='pier' />
       <StyledFadingTextContainer>
         <StyledFade cascade duration={2000}>
           {textArr[currentTextIndex]}
