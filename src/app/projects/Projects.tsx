@@ -10,7 +10,6 @@ import Container from '../base/Container';
 const StyledProjects = styled.div`
   color: ${COLORS.primary};
   position: relative;
-  padding: 3rem 0;
 `;
 
 const StyledImageContainer = styled.div`
