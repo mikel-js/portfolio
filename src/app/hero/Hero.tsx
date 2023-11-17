@@ -125,7 +125,7 @@ const Hero: React.FC = () => {
   return (
     <StyledHero>
       <StyledFadingTextContainer>
-        <StyledFade cascade direction='up' duration={2000}>
+        <StyledFade cascade duration={2000}>
           {textArr[currentTextIndex]}
         </StyledFade>
       </StyledFadingTextContainer>
