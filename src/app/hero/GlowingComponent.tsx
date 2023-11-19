@@ -7,22 +7,18 @@ const textFlicker = keyframes`
   25% { opacity: 0.3; }
 `;
 
-const GlowingButton = styled.div`
+const StyledGlowingComponent = styled.div`
   position: relative;
-  color: hsl(186 100% 69%);
+  color: #d09cfa;
   cursor: pointer;
   padding: 0.5rem 3rem;
-
   background: none;
   perspective: 2em;
-  font-family: 'Raleway', sans-serif;
   font-size: 2em;
   font-weight: 400;
   letter-spacing: 1em;
 
   &:hover {
-    color: rgba(0, 0, 0, 0.8);
-    text-shadow: none;
     animation: none;
   }
 `;
@@ -30,7 +26,7 @@ const GlowingButton = styled.div`
 const GlowingText = styled.span`
   float: left;
   margin-right: -0.8em;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em hsl(186 100% 69%);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em #d09cfa;
   animation: ${textFlicker} 3s linear infinite;
 
   &:hover {
@@ -47,12 +43,12 @@ const GlowingText = styled.span`
     opacity: 0.7;
     filter: blur(1em);
     transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
-    background: hsl(186 100% 69%);
+    background: #d09cfa;
     pointer-events: none;
   }
 `;
 
-const GlowingButtonBefore = styled.div`
+const GlowingTextBefore = styled.div`
   content: '';
   position: absolute;
   top: 0;
@@ -62,7 +58,7 @@ const GlowingButtonBefore = styled.div`
   opacity: 0.7;
   filter: blur(1em);
   transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
-  background: hsl(186 100% 69%);
+  background: #d09cfa;
   pointer-events: none;
 `;
 
@@ -73,13 +69,13 @@ const StyledSup = styled.span`
   top: -0.5rem;
 `;
 
-const GlowingBtn = () => (
-  <GlowingButton>
+const GlowingComponent = () => (
+  <StyledGlowingComponent>
     <GlowingText>
       E=MC<StyledSup>2</StyledSup>
     </GlowingText>
-    <GlowingButtonBefore />
-  </GlowingButton>
+    <GlowingTextBefore />
+  </StyledGlowingComponent>
 );
 
-export default GlowingBtn;
+export default GlowingComponent;

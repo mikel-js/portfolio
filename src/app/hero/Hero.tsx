@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import { Fade } from 'react-awesome-reveal';
 import { COLORS } from '@/constants/colors';
-import GlowingBtn from './GlowingLetter';
+import GlowingComponent from './GlowingComponent';
 
 const StyledHero = styled.div`
   background-color: ${COLORS.black};
@@ -17,11 +17,16 @@ const StyledHero = styled.div`
   text-align: center;
   transform-style: preserve-3d;
   position: relative;
+
+  h1,
+  h2 {
+    font-weight: 500;
+  }
 `;
 
 const StyledContent = styled.div`
   position: relative;
-  z-index: 2;
+
   h1 {
     font-size: 3rem;
   }
@@ -41,7 +46,6 @@ const StyledFadingTextContainer = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 2;
 `;
 
 const StyledFade = styled(Fade)`
@@ -100,28 +104,64 @@ const StyledMoon = styled.img`
   z-index: -1;
   transform: translateZ(-5px) scale(1);
 `;
-const StyledGlowingImage = styled.div`
+
+const animate = keyframes`
+0%
+{ transform: rotate(0deg);
+filter:hue-rotate(0deg);
+}
+100%
+{
+ transform: rotate(360deg);
+  filter:hue-rotate(360deg);
+}
+`;
+
+const StyledCircle = styled.div`
+  position: absolute;
+  left: 10rem;
+  width: 70rem;
+  height: 70rem;
+  border-radius: 50%;
+  background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
+  animation: ${animate} 20s linear infinite;
+  transform: translateZ(-10px) scale(2);
+  transform: translateZ(-10px) scale(2);
+
+  &:before {
+    content: '';
+    width: 70rem;
+    height: 70rem;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 1000;
+  }
+  &:after {
+    content: '';
+    width: 70rem;
+    height: 70rem;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
+    border-radius: 50%;
+    z-index: 1;
+    filter: blur(30px);
+  }
+`;
+
+const StyledLaptop = styled.img`
   position: absolute;
   bottom: 5rem;
   right: 5rem;
-  z-index: -2;
-
-  }
-`;
-const StyledLaptop = styled.img`
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    border-radius: inherit;
-    box-shadow: 0 0 20px 5px #00f; /* Adjust the color and size as needed */
-    opacity: 0.7; /* Adjust the opacity as needed */
-    pointer-events: none;
-  }
+  z-index: 2;
 `;
 
 const Hero: React.FC = () => {
@@ -147,18 +187,7 @@ const Hero: React.FC = () => {
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [nameIsVisible, setNameIsVisible] = useState(false);
-  const [textArr, setTextArr] = useState([
-    <h2>
-      E = MC<StyledSup>2</StyledSup>
-    </h2>,
-  ]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setNameIsVisible(true);
-      setTextArr(texts);
-    }, 2000);
-  }, []);
+  const [textArr, setTextArr] = useState(texts);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -183,6 +212,7 @@ const Hero: React.FC = () => {
 
   return (
     <StyledHero>
+      <StyledCircle />
       {/* <StyledHelsinki src='/assets/parallax/helsinki.png' alt='helsinki' />
       <StyledMoon src='/assets/parallax/moon.png' alt='moon' /> */}
       <StyledFadingTextContainer>
@@ -190,28 +220,23 @@ const Hero: React.FC = () => {
           {textArr[currentTextIndex]}
         </StyledFade>
       </StyledFadingTextContainer>
-      {nameIsVisible && (
-        <StyledContent>
-          <h1>
-            M<StyledSmallText>ichael </StyledSmallText>C
-            <StyledSmallText>astro</StyledSmallText>
-            <StyledSup>2</StyledSup>
-          </h1>
-          <h2>Welcome to my Portfolio Site!</h2>
-          <h3>Excited to see you here</h3>
-          {/* <StyledLinks>
+      <StyledContent>
+        <h1>
+          M<StyledSmallText>ichael </StyledSmallText>C
+          <StyledSmallText>astro</StyledSmallText>
+        </h1>
+        <h2>Welcome to my Portfolio Site!</h2>
+        <h3>Excited to see you here</h3>
+        {/* <StyledLinks>
             {externalLinks.map(({ name, src, linkTo }) => (
               <StyledLink href={linkTo} target='_blank'>
                 <Image src={src} alt={name} width='80' height='80' />
               </StyledLink>
             ))}
           </StyledLinks> */}
-        </StyledContent>
-      )}
-      <GlowingBtn />
-      <StyledGlowingImage>
-        <StyledLaptop src='assets/parallax/laptop1.png' />
-      </StyledGlowingImage>
+      </StyledContent>
+      <GlowingComponent />
+      <StyledLaptop src='assets/parallax/laptop1.png' />
     </StyledHero>
   );
 };
