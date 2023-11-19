@@ -7,7 +7,7 @@ import { COLORS } from '@/constants/colors';
 import GlowingComponent from './GlowingComponent';
 
 const StyledHero = styled.div`
-  background-color: ${COLORS.black};
+  background-color: none;
   color: ${COLORS.white};
   height: 100vh;
   width: 100vw;
@@ -16,6 +16,7 @@ const StyledHero = styled.div`
   align-items: center;
   text-align: center;
   transform-style: preserve-3d;
+  perspective-origin-x: 100%;
   position: relative;
 
   h1,
@@ -26,7 +27,7 @@ const StyledHero = styled.div`
 
 const StyledContent = styled.div`
   position: relative;
-
+  z-index: 2;
   h1 {
     font-size: 3rem;
   }
@@ -46,6 +47,7 @@ const StyledFadingTextContainer = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 2;
 `;
 
 const StyledFade = styled(Fade)`
@@ -103,6 +105,7 @@ const StyledMoon = styled.img`
   width: 10rem;
   z-index: -1;
   transform: translateZ(-5px) scale(1);
+  transform-origin-x: 100%;
 `;
 
 const animate = keyframes`
@@ -117,6 +120,16 @@ filter:hue-rotate(0deg);
 }
 `;
 
+const StyledCircleContainer = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+  perspective-origin-x: 100%;
+  transform: translateZ(-10px) scale(2);
+  z-index: 1000;
+`;
+
 const StyledCircle = styled.div`
   position: absolute;
   left: 10rem;
@@ -125,7 +138,6 @@ const StyledCircle = styled.div`
   border-radius: 50%;
   background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
   animation: ${animate} 20s linear infinite;
-  transform: translateZ(-10px) scale(2);
   transform: translateZ(-10px) scale(2);
 
   &:before {
@@ -212,7 +224,10 @@ const Hero: React.FC = () => {
 
   return (
     <StyledHero>
-      <StyledCircle />
+      <StyledCircleContainer>
+        <StyledCircle />
+      </StyledCircleContainer>
+
       {/* <StyledHelsinki src='/assets/parallax/helsinki.png' alt='helsinki' />
       <StyledMoon src='/assets/parallax/moon.png' alt='moon' /> */}
       <StyledFadingTextContainer>
