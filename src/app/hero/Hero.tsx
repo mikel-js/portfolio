@@ -199,13 +199,13 @@ const Hero: React.FC = () => {
           </h1>
           <h2>Welcome to my Portfolio Site!</h2>
           <h3>Excited to see you here</h3>
-          <StyledLinks>
+          {/* <StyledLinks>
             {externalLinks.map(({ name, src, linkTo }) => (
               <StyledLink href={linkTo} target='_blank'>
                 <Image src={src} alt={name} width='80' height='80' />
               </StyledLink>
             ))}
-          </StyledLinks>
+          </StyledLinks> */}
         </StyledContent>
       )}
       <GlowingBtn />
