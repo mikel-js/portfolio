@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from '@/constants/breakpoints';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
@@ -12,22 +13,30 @@ filter:hue-rotate(0deg);
   filter:hue-rotate(360deg);
 }
 `;
+const StyledCircleContainer = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+  perspective-origin-x: 100%;
+  transform: translateZ(-10px) scale(2);
+  z-index: 1000;
+`;
 
 const StyledCircle = styled.div`
   position: absolute;
   left: 10rem;
-  width: 70rem;
-  height: 70rem;
+  width: 40rem;
+  height: 40rem;
   border-radius: 50%;
   background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
   animation: ${animate} 20s linear infinite;
   transform: translateZ(-10px) scale(2);
-  transform: translateZ(-10px) scale(2);
 
   &:before {
     content: '';
-    width: 70rem;
-    height: 70rem;
+    width: 40rem;
+    height: 40rem;
     position: absolute;
     top: 6px;
     left: 6px;
@@ -39,8 +48,8 @@ const StyledCircle = styled.div`
   }
   &:after {
     content: '';
-    width: 70rem;
-    height: 70rem;
+    width: 40rem;
+    height: 40rem;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -51,10 +60,24 @@ const StyledCircle = styled.div`
     z-index: 1;
     filter: blur(30px);
   }
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    width: 70rem;
+    height: 70rem;
+    &:before,
+    &:after {
+      width: 70rem;
+      height: 70rem;
+    }
+  }
 `;
 
 const GlowingCircle = () => {
-  return <StyledCircle />;
+  return (
+    <StyledCircleContainer>
+      <StyledCircle />
+    </StyledCircleContainer>
+  );
 };
 
 export default GlowingCircle;

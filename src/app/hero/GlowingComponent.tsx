@@ -1,3 +1,4 @@
+import { COLORS } from '@/constants/colors';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
@@ -9,7 +10,7 @@ const textFlicker = keyframes`
 
 const StyledGlowingComponent = styled.div`
   position: relative;
-  color: #d09cfa;
+  color: ${COLORS.purple4};
   cursor: pointer;
   padding: 0.5rem 3rem;
   background: none;
@@ -26,7 +27,7 @@ const StyledGlowingComponent = styled.div`
 const GlowingText = styled.span`
   float: left;
   margin-right: -0.8em;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em #d09cfa;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em ${COLORS.purple4};
   animation: ${textFlicker} 3s linear infinite;
 
   &:hover {
@@ -43,7 +44,7 @@ const GlowingText = styled.span`
     opacity: 0.7;
     filter: blur(1em);
     transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
-    background: #d09cfa;
+    background: ${COLORS.purple4};
     pointer-events: none;
   }
 `;
@@ -58,7 +59,7 @@ const GlowingTextBefore = styled.div`
   opacity: 0.7;
   filter: blur(1em);
   transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
-  background: #d09cfa;
+  background: ${COLORS.purple4};
   pointer-events: none;
 `;
 

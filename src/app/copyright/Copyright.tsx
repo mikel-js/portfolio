@@ -12,6 +12,18 @@ const StyledContainer = styled(Container)`
 `;
 
 const Copyright: React.FC = () => {
+  const externalLinks = [
+    {
+      name: 'LinkedIn',
+      src: '/assets/icon-linkedin.svg',
+      linkTo: 'https://www.linkedin.com/in/michael-castro-1331bb89/',
+    },
+    {
+      name: 'GitHub',
+      src: '/assets/icon-github.svg',
+      linkTo: 'https://github.com/mikel-js',
+    },
+  ];
   return (
     <StyledCopyright>
       <StyledContainer>

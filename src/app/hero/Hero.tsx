@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
-import Image from 'next/image';
+import styled from 'styled-components';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import { Fade } from 'react-awesome-reveal';
 import { COLORS } from '@/constants/colors';
 import GlowingComponent from './GlowingComponent';
+import GlowingCircle from './GlowingCircle';
 
 const StyledHero = styled.div`
   background-color: none;
@@ -39,6 +39,9 @@ const StyledContent = styled.div`
   }
 `;
 
+const StyledPurpleText = styled.span`
+  color: ${COLORS.purple4};
+`;
 const StyledSmallText = styled.span`
   font-size: 3rem;
 `;
@@ -68,72 +71,6 @@ const StyledFade = styled(Fade)`
   }
 `;
 
-const animate = keyframes`
-0%
-{ transform: rotate(0deg);
-filter:hue-rotate(0deg);
-}
-100%
-{
- transform: rotate(360deg);
-  filter:hue-rotate(360deg);
-}
-`;
-
-const StyledCircleContainer = styled.div`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  transform-style: preserve-3d;
-  perspective-origin-x: 100%;
-  transform: translateZ(-10px) scale(2);
-  z-index: 1000;
-`;
-
-const StyledCircle = styled.div`
-  position: absolute;
-  left: 10rem;
-  width: 20rem;
-  height: 20rem;
-  border-radius: 50%;
-  background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
-  animation: ${animate} 20s linear infinite;
-  transform: translateZ(-10px) scale(2);
-
-  &:before {
-    content: '';
-    width: 20rem;
-    height: 20rem;
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    right: 6px;
-    bottom: 6px;
-    background: #000;
-    border-radius: 50%;
-    z-index: 1000;
-  }
-  &:after {
-    content: '';
-    width: 20rem;
-    height: 20rem;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
-    border-radius: 50%;
-    z-index: 1;
-    filter: blur(30px);
-  }
-
-  @media (min-width: ${BREAKPOINTS.md}) {
-    width: 70rem;
-    height: 70rem;
-  }
-`;
-
 const StyledLaptop = styled.img`
   display: none;
   position: absolute;
@@ -149,27 +86,31 @@ const StyledLaptop = styled.img`
 const Hero: React.FC = () => {
   const texts = [
     <h2>
-      E<StyledSmallText>xcellence</StyledSmallText>
+      <StyledPurpleText>E</StyledPurpleText>
+      <StyledSmallText>xcellence</StyledSmallText>
     </h2>,
     <h2>
-      E<StyledSmallText>nthusiasm</StyledSmallText>
+      <StyledPurpleText>E</StyledPurpleText>
+      <StyledSmallText>nthusiasm</StyledSmallText>
     </h2>,
     <h2>
-      E<StyledSmallText>ffiency</StyledSmallText>
+      <StyledPurpleText>E</StyledPurpleText>
+      <StyledSmallText>ffiency</StyledSmallText>
     </h2>,
     <h2>
-      E<StyledSmallText>xpertise</StyledSmallText>
+      <StyledPurpleText>E</StyledPurpleText>
+      <StyledSmallText>xpertise</StyledSmallText>
     </h2>,
     <h2>
-      E<StyledSmallText>agerness to Learn</StyledSmallText>
+      <StyledPurpleText>E</StyledPurpleText>
+      <StyledSmallText>ager</StyledSmallText>
     </h2>,
     <h2>
-      E<StyledSmallText>ffective Communicator</StyledSmallText>
+      <StyledPurpleText>E</StyledPurpleText>
+      <StyledSmallText>ffective</StyledSmallText>
     </h2>,
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [nameIsVisible, setNameIsVisible] = useState(false);
-  const [textArr, setTextArr] = useState(texts);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -179,46 +120,23 @@ const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const externalLinks = [
-    {
-      name: 'LinkedIn',
-      src: '/assets/icon-linkedin.svg',
-      linkTo: 'https://www.linkedin.com/in/michael-castro-1331bb89/',
-    },
-    {
-      name: 'GitHub',
-      src: '/assets/icon-github.svg',
-      linkTo: 'https://github.com/mikel-js',
-    },
-  ];
-
   return (
     <StyledHero>
-      <StyledCircleContainer>
-        <StyledCircle />
-      </StyledCircleContainer>
-
-      {/* <StyledHelsinki src='/assets/parallax/helsinki.png' alt='helsinki' />
-      <StyledMoon src='/assets/parallax/moon.png' alt='moon' /> */}
+      <GlowingCircle />
       <StyledFadingTextContainer>
         <StyledFade cascade duration={2000}>
-          {textArr[currentTextIndex]}
+          {texts[currentTextIndex]}
         </StyledFade>
       </StyledFadingTextContainer>
       <StyledContent>
         <h1>
-          M<StyledSmallText>ichael </StyledSmallText>C
+          <StyledPurpleText>M</StyledPurpleText>
+          <StyledSmallText>ichael </StyledSmallText>
+          <StyledPurpleText>C</StyledPurpleText>
           <StyledSmallText>astro</StyledSmallText>
         </h1>
         <h2>Welcome to my Portfolio Site!</h2>
         <h3>Excited to see you here</h3>
-        {/* <StyledLinks>
-            {externalLinks.map(({ name, src, linkTo }) => (
-              <StyledLink href={linkTo} target='_blank'>
-                <Image src={src} alt={name} width='80' height='80' />
-              </StyledLink>
-            ))}
-          </StyledLinks> */}
       </StyledContent>
       <GlowingComponent />
       <StyledLaptop src='assets/parallax/laptop1.png' />
