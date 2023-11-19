@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import { Fade } from 'react-awesome-reveal';
 import { COLORS } from '@/constants/colors';
+import GlowingBtn from './GlowingLetter';
 
 const StyledHero = styled.div`
   background-color: ${COLORS.black};
@@ -105,7 +106,6 @@ const StyledGlowingImage = styled.div`
   right: 5rem;
   z-index: -2;
 
-
   }
 `;
 const StyledLaptop = styled.img`
@@ -185,7 +185,6 @@ const Hero: React.FC = () => {
     <StyledHero>
       {/* <StyledHelsinki src='/assets/parallax/helsinki.png' alt='helsinki' />
       <StyledMoon src='/assets/parallax/moon.png' alt='moon' /> */}
-
       <StyledFadingTextContainer>
         <StyledFade cascade duration={2000}>
           {textArr[currentTextIndex]}
@@ -209,6 +208,7 @@ const Hero: React.FC = () => {
           </StyledLinks>
         </StyledContent>
       )}
+      <GlowingBtn />
       <StyledGlowingImage>
         <StyledLaptop src='assets/parallax/laptop1.png' />
       </StyledGlowingImage>
