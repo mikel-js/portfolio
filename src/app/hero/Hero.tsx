@@ -3,15 +3,17 @@ import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import { Fade } from 'react-awesome-reveal';
+import { COLORS } from '@/constants/colors';
 
 const StyledHero = styled.div`
+  background-color: ${COLORS.black};
+  color: ${COLORS.white};
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   transform-style: preserve-3d;
   position: relative;
 `;
@@ -97,6 +99,30 @@ const StyledMoon = styled.img`
   z-index: -1;
   transform: translateZ(-5px) scale(1);
 `;
+const StyledGlowingImage = styled.div`
+  position: absolute;
+  bottom: 5rem;
+  right: 5rem;
+  z-index: -2;
+
+
+  }
+`;
+const StyledLaptop = styled.img`
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: 0 0 20px 5px #00f; /* Adjust the color and size as needed */
+    opacity: 0.7; /* Adjust the opacity as needed */
+    pointer-events: none;
+  }
+`;
 
 const Hero: React.FC = () => {
   const texts = [
@@ -157,8 +183,8 @@ const Hero: React.FC = () => {
 
   return (
     <StyledHero>
-      <StyledHelsinki src='/assets/parallax/helsinki.png' alt='helsinki' />
-      <StyledMoon src='/assets/parallax/moon.png' alt='moon' />
+      {/* <StyledHelsinki src='/assets/parallax/helsinki.png' alt='helsinki' />
+      <StyledMoon src='/assets/parallax/moon.png' alt='moon' /> */}
 
       <StyledFadingTextContainer>
         <StyledFade cascade duration={2000}>
@@ -183,6 +209,9 @@ const Hero: React.FC = () => {
           </StyledLinks>
         </StyledContent>
       )}
+      <StyledGlowingImage>
+        <StyledLaptop src='assets/parallax/laptop1.png' />
+      </StyledGlowingImage>
     </StyledHero>
   );
 };
