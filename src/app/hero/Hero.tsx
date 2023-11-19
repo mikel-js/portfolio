@@ -68,46 +68,6 @@ const StyledFade = styled(Fade)`
   }
 `;
 
-const StyledSup = styled.span`
-  vertical-align: super;
-  font-size: 2rem;
-  position: relative;
-  top: -0.5rem;
-`;
-
-const StyledLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-`;
-const StyledLink = styled.a``;
-
-const StyledBg = styled.div`
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-`;
-
-const StyledHelsinki = styled.img`
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  z-index: -1;
-  transform: translateZ(-10px) scale(2);
-`;
-const StyledMoon = styled.img`
-  position: absolute;
-  top: 10rem;
-  right: 20rem;
-  width: 10rem;
-  z-index: -1;
-  transform: translateZ(-5px) scale(1);
-  transform-origin-x: 100%;
-`;
-
 const animate = keyframes`
 0%
 { transform: rotate(0deg);
@@ -133,8 +93,8 @@ const StyledCircleContainer = styled.div`
 const StyledCircle = styled.div`
   position: absolute;
   left: 10rem;
-  width: 70rem;
-  height: 70rem;
+  width: 20rem;
+  height: 20rem;
   border-radius: 50%;
   background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
   animation: ${animate} 20s linear infinite;
@@ -142,8 +102,8 @@ const StyledCircle = styled.div`
 
   &:before {
     content: '';
-    width: 70rem;
-    height: 70rem;
+    width: 20rem;
+    height: 20rem;
     position: absolute;
     top: 6px;
     left: 6px;
@@ -155,8 +115,8 @@ const StyledCircle = styled.div`
   }
   &:after {
     content: '';
-    width: 70rem;
-    height: 70rem;
+    width: 20rem;
+    height: 20rem;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -167,13 +127,23 @@ const StyledCircle = styled.div`
     z-index: 1;
     filter: blur(30px);
   }
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    width: 70rem;
+    height: 70rem;
+  }
 `;
 
 const StyledLaptop = styled.img`
+  display: none;
   position: absolute;
   bottom: 5rem;
   right: 5rem;
   z-index: 2;
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    display: block;
+  }
 `;
 
 const Hero: React.FC = () => {
