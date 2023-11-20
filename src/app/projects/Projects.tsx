@@ -53,11 +53,17 @@ const StyledCircleContainer = styled.div`
 `;
 
 const StyledCircle = styled.div<{ isActive: boolean }>`
+  cursor: pointer;
   height: 1rem;
   width: 1rem;
   border-radius: 50%;
   border: 1px solid ${COLORS.primaryDark};
   background-color: ${({ isActive }) => isActive && COLORS.purple1};
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    height: 2rem;
+    width: 2rem;
+  }
 `;
 
 const Projects: React.FC = () => {
