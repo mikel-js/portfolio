@@ -7,7 +7,10 @@ import { iconArray } from './iconsArray';
 import Image from 'next/image';
 import { Bounce } from 'react-awesome-reveal';
 
-const StyledTechStacks = styled.div``;
+const StyledTechStacks = styled.div`
+  color: ${COLORS.white};
+  text-align: center;
+`;
 
 const StyledContainer = styled(Container)`
   display: flex;
@@ -15,10 +18,13 @@ const StyledContainer = styled(Container)`
 `;
 
 const StyledSection = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
 `;
 const StyledIconContainer = styled.div`
   display: flex;
@@ -30,10 +36,18 @@ const StyledIcon = styled.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 7.25rem;
-  height: 7.25rem;
   background-color: black;
   border-radius: 50%;
+
+  img {
+    width: 3.75rem;
+    height: 3.75rem;
+
+    @media (min-width: ${BREAKPOINTS.md}) {
+      width: 5.25rem;
+      height: 5.25rem;
+    }
+  }
 `;
 
 const TechStacks: React.FC = ({}) => {
@@ -46,7 +60,7 @@ const TechStacks: React.FC = ({}) => {
             {iconArray.map(({ name, src }) => (
               <StyledIconContainer>
                 <StyledIcon key={name}>
-                  <Image alt={name} src={src} width='60' height='60' />
+                  <img alt={name} src={src} />
                 </StyledIcon>
                 <p>{name}</p>
               </StyledIconContainer>

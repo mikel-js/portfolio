@@ -150,7 +150,7 @@ const Hero: React.FC = () => {
         <h3>Excited to see you here</h3>
       </StyledContent>
       <GlowingComponent />
-      <StyledLaptop src='assets/parallax/laptop1.png' />
+      <StyledLaptop src='assets/laptop1.png' />
     </StyledHero>
   );
 };
