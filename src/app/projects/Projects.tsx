@@ -8,8 +8,10 @@ import { BREAKPOINTS } from '@/constants/breakpoints';
 import Container from '../base/Container';
 
 const StyledProjects = styled.div`
-  color: ${COLORS.primary};
+  background-color: ${COLORS.white2};
+  color: ${COLORS.primaryDark};
   position: relative;
+  transform-style: preserve-3d;
 `;
 
 const StyledImageContainer = styled.div`
@@ -77,6 +79,12 @@ const Projects: React.FC = () => {
       title: 'Guessing game',
       desc: 'One of my first projects. A simple guessing game and straighforward UI',
       link: 'https://mikelgame.netlify.app/',
+    },
+    {
+      src: '/assets/family.png',
+      title: 'More coming soon!',
+      desc: 'Enjoying my time as a first-time father and have not worked on personal projects as of late, but you can check my GitHub!',
+      link: 'https://github.com/mikel-js',
     },
   ];
 

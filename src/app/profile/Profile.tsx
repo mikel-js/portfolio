@@ -14,6 +14,7 @@ const StyledProfile = styled.div`
   margin: 0 auto;
   max-width: 72rem;
   position: relative;
+  padding: 4rem 0;
   color: ${COLORS.primaryDark};
 
   h3 {

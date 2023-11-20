@@ -63,14 +63,14 @@ const ImageTilt: React.FC<ImageTiltProps> = ({
 }) => {
   return (
     <StyledImageTilt isActive={isActive}>
-      <Tilt
-        perspective={1000}
+      {/* <Tilt
+        perspective={5000}
         glareEnable={true}
         glareMaxOpacity={0.45}
         scale={1}
-      >
-        <StyledImage src={src} alt={title} />
-      </Tilt>
+      > */}
+      <StyledImage src={src} alt={title} />
+      {/* </Tilt> */}
       <StyledTextContainer>
         <p>
           {desc}{' '}
