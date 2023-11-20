@@ -14,6 +14,7 @@ const StyledProfile = styled.div`
   margin: 0 auto;
   max-width: 72rem;
   position: relative;
+  color: ${COLORS.primaryDark};
 
   h3 {
     font-weight: 400;
@@ -72,7 +73,7 @@ const StyledLogo = styled.div`
   position: absolute;
   top: 3rem;
   left: -2rem;
-  opacity: 0.3;
+  opacity: 0.5;
 
   @media (min-width: ${BREAKPOINTS.md}) {
     left: -9rem;
@@ -84,7 +85,7 @@ const StyledCircle = styled.div`
   left: 2rem;
   height: 10rem;
   width: 10rem;
-  background-color: ${COLORS.purple2};
+  background-color: ${COLORS.purple1};
   border-radius: 50%;
 
   @media (min-width: ${BREAKPOINTS.md}) {

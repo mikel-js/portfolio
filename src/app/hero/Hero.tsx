@@ -98,15 +98,11 @@ const Hero: React.FC = () => {
     </h2>,
     <h2>
       <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>nthusiasm</StyledSmallText>
+      <StyledSmallText>nthusiastic</StyledSmallText>
     </h2>,
     <h2>
       <StyledPurpleText>E</StyledPurpleText>
       <StyledSmallText>ffienct</StyledSmallText>
-    </h2>,
-    <h2>
-      <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>xpertise</StyledSmallText>
     </h2>,
     <h2>
       <StyledPurpleText>E</StyledPurpleText>
@@ -115,6 +111,14 @@ const Hero: React.FC = () => {
     <h2>
       <StyledPurpleText>E</StyledPurpleText>
       <StyledSmallText>ffective</StyledSmallText>
+    </h2>,
+    <h2>
+      <StyledPurpleText>E</StyledPurpleText>
+      <StyledSmallText>nergetic</StyledSmallText>
+    </h2>,
+    <h2>
+      <StyledPurpleText>E</StyledPurpleText>
+      <StyledSmallText>asy-going</StyledSmallText>
     </h2>,
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
