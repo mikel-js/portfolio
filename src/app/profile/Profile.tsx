@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 import { COLORS } from '../../constants/colors';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import ScrollRevealComponent from './ScrollComponent';
@@ -30,6 +29,7 @@ const StyledProfile = styled.div`
 const ImageContainer = styled.div`
   flex: 1;
   z-index: 3;
+  padding: 0 2rem;
 `;
 
 const StyledText = styled.div`
@@ -76,34 +76,47 @@ const StyledLogo = styled.div`
   left: -2rem;
   opacity: 0.5;
 
+  img {
+    max-width: 15.75rem;
+    max-height: 15.75rem;
+  }
+
   @media (min-width: ${BREAKPOINTS.md}) {
     left: -9rem;
+
+    img {
+      max-width: 18.75rem;
+      max-height: 18.75rem;
+    }
   }
 `;
 const StyledCircle = styled.div`
   position: absolute;
   top: 18rem;
-  left: 2rem;
+  left: 0;
   height: 10rem;
   width: 10rem;
   background-color: ${COLORS.purple1};
   border-radius: 50%;
 
   @media (min-width: ${BREAKPOINTS.md}) {
-    left: -6rem;
+    left: -3rem;
+    height: 12rem;
+    width: 12rem;
   }
+`;
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 0.6639477977161501;
 `;
 
 const Profile: React.FC = () => {
   return (
     <StyledProfile>
       <ImageContainer>
-        <Image
-          src='/assets/profile-pic.png'
-          alt='profile-pic'
-          width='407'
-          height='613'
-        />
+        <StyledImage src='/assets/profile-pic.png' alt='profile-pic' />
       </ImageContainer>
       <StyledText>
         <StyledInfo>
@@ -132,12 +145,7 @@ const Profile: React.FC = () => {
         </StyledBox>
       </StyledText>
       <StyledLogo>
-        <Image
-          alt='logo'
-          width='300'
-          height='300'
-          src='/assets/logo-light.png'
-        />
+        <img alt='logo' src='/assets/logo-light.png' />
       </StyledLogo>
       <StyledCircle />
     </StyledProfile>

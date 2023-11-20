@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
     </h2>,
     <h2>
       <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>ffienct</StyledSmallText>
+      <StyledSmallText>fficient</StyledSmallText>
     </h2>,
     <h2>
       <StyledPurpleText>E</StyledPurpleText>

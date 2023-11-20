@@ -27,7 +27,7 @@ const RevealComponent: React.FC<RevealComponentProps> = ({
 }) => {
   return (
     <Container>
-      <Fade direction={direction} delay={delay}>
+      <Fade direction={direction} delay={delay} triggerOnce>
         {children}
       </Fade>
     </Container>
