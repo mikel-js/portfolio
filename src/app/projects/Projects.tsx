@@ -49,13 +49,14 @@ const StyledCircleContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 1rem;
+  padding: 2rem;
 `;
 
 const StyledCircle = styled.div<{ isActive: boolean }>`
   height: 1rem;
   width: 1rem;
   border-radius: 50%;
-  border: 1px solid ${COLORS.primary};
+  border: 1px solid ${COLORS.primaryDark};
   background-color: ${({ isActive }) => isActive && COLORS.purple1};
 `;
 
