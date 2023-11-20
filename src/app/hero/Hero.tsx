@@ -54,7 +54,7 @@ const StyledFadingTextContainer = styled.div`
 `;
 
 const StyledFade = styled(Fade)`
-  padding-top: 1rem;
+  padding-top: 3rem;
   font-size: 2rem;
   min-height: 7.25rem;
 
@@ -73,13 +73,20 @@ const StyledFade = styled(Fade)`
 
 const StyledLaptop = styled.img`
   display: none;
-  position: absolute;
-  bottom: 5rem;
-  right: 5rem;
+  margin-top: 5.5rem;
   z-index: 2;
 
-  @media (min-width: ${BREAKPOINTS.md}) {
+
+  @media (min-width: ${BREAKPOINTS.lg}) {
     display: block;
+    max-width: 25rem;
+  }
+
+  @media (min-width: ${BREAKPOINTS.xl}) 
+ { position: absolute;
+  bottom: 5rem;
+  right: 5rem;  
+  max-width: 40rem;}
   }
 `;
 
@@ -87,7 +94,7 @@ const Hero: React.FC = () => {
   const texts = [
     <h2>
       <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>xcellence</StyledSmallText>
+      <StyledSmallText>xcellent</StyledSmallText>
     </h2>,
     <h2>
       <StyledPurpleText>E</StyledPurpleText>
@@ -95,7 +102,7 @@ const Hero: React.FC = () => {
     </h2>,
     <h2>
       <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>ffiency</StyledSmallText>
+      <StyledSmallText>ffienct</StyledSmallText>
     </h2>,
     <h2>
       <StyledPurpleText>E</StyledPurpleText>
