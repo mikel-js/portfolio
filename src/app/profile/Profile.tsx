@@ -27,9 +27,14 @@ const StyledProfile = styled.div`
 `;
 
 const ImageContainer = styled.div`
+  display: none;
   flex: 1;
   z-index: 3;
   padding: 0 2rem;
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    display: block;
+  }
 `;
 
 const StyledText = styled.div`
@@ -74,7 +79,7 @@ const StyledLogo = styled.div`
   position: absolute;
   top: 3rem;
   left: -2rem;
-  opacity: 0.5;
+  opacity: 0.3;
 
   img {
     max-width: 15.75rem;
@@ -83,7 +88,7 @@ const StyledLogo = styled.div`
 
   @media (min-width: ${BREAKPOINTS.md}) {
     left: -9rem;
-
+    opacity: 0.5;
     img {
       max-width: 18.75rem;
       max-height: 18.75rem;
@@ -98,11 +103,13 @@ const StyledCircle = styled.div`
   width: 10rem;
   background-color: ${COLORS.purple1};
   border-radius: 50%;
+  display: none;
 
   @media (min-width: ${BREAKPOINTS.md}) {
     left: -3rem;
     height: 12rem;
     width: 12rem;
+    display: block;
   }
 `;
 

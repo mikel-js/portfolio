@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from '../base/Container';
 import Image from 'next/image';
+import { COLORS } from '@/constants/colors';
 
 const StyledCopyright = styled.div``;
 const StyledContainer = styled(Container)`
@@ -9,6 +10,7 @@ const StyledContainer = styled(Container)`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  color: ${COLORS.white};
 `;
 
 const Copyright: React.FC = () => {
@@ -28,12 +30,12 @@ const Copyright: React.FC = () => {
     <StyledCopyright>
       <StyledContainer>
         <p>Copyright © 2023</p>
-        <Image
-          alt='logo'
-          width='100'
-          height='100'
-          src='/assets/logo-light.png'
-        />
+        {externalLinks.map(({ name, src, linkTo }) => (
+          <a href={linkTo} key={name} target='_blank'>
+            <Image alt={name} src={src} width='100' height='100' />
+          </a>
+        ))}
+
         <p>Michael Castro</p>
       </StyledContainer>
     </StyledCopyright>
