@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Container from '../base/Container';
-import Image from 'next/image';
 import { COLORS } from '@/constants/colors';
+import { BREAKPOINTS } from '@/constants/breakpoints';
 
 const StyledCopyright = styled.div``;
 const StyledContainer = styled(Container)`
@@ -11,6 +11,16 @@ const StyledContainer = styled(Container)`
   align-items: center;
   gap: 2rem;
   color: ${COLORS.white};
+`;
+
+const StyledImg = styled.img`
+  width: 3rem;
+  height: 3rem;
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
 `;
 
 const Copyright: React.FC = () => {
@@ -32,7 +42,7 @@ const Copyright: React.FC = () => {
         <p>Copyright © 2023</p>
         {externalLinks.map(({ name, src, linkTo }) => (
           <a href={linkTo} key={name} target='_blank'>
-            <Image alt={name} src={src} width='100' height='100' />
+            <StyledImg alt={name} src={src} />
           </a>
         ))}
 

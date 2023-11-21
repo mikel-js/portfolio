@@ -16,14 +16,16 @@ const StyledImageTilt = styled.div<{ isActive: boolean }>`
   max-width: 33.75rem;
   text-align: center;
 
-  p {
-    font-size: 0.7rem;
+  p,
+  a {
+    font-size: 1rem;
   }
 
   @media (min-width: ${BREAKPOINTS.lg}) {
     max-width: 58rem;
     text-align: left;
-    p {
+    p,
+    a {
       font-size: 1.5rem;
     }
   }
@@ -49,7 +51,7 @@ const StyledTextContainer = styled.div`
   align-items: center;
 
   p {
-    min-height: 2rem;
+    min-height: 6rem;
     @media (min-width: ${BREAKPOINTS.lg}) {
       min-height: 5.4375rem;
     }
@@ -59,13 +61,18 @@ const StyledTextContainer = styled.div`
 const StyledA = styled.a`
   background-color: ${COLORS.purple5};
   color: ${COLORS.white};
-  padding: 1rem;
-  border-radius: 0.875rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   text-decoration: none;
 
   &:hover {
     color: ${COLORS.purple5};
     background-color: ${COLORS.white};
+  }
+
+  @media (min-width: ${BREAKPOINTS.lg}) {
+    padding: 1rem;
+    border-radius: 0.875rem;
   }
 `;
 
