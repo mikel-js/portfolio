@@ -14,7 +14,6 @@
     "react": "^18",
     "react-awesome-reveal": "^4.2.6",
     "react-dom": "^18",
-    "react-parallax-tilt": "^1.7.174",
     "styled-components": "^6.1.1"
   },
   "devDependencies": {

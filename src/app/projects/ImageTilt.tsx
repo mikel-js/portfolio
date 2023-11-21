@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Tilt from 'react-parallax-tilt';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import { COLORS } from '@/constants/colors';
 
@@ -79,14 +78,7 @@ const ImageTilt: React.FC<ImageTiltProps> = ({
 }) => {
   return (
     <StyledImageTilt isActive={isActive}>
-      {/* <Tilt
-        perspective={5000}
-        glareEnable={true}
-        glareMaxOpacity={0.45}
-        scale={1}
-      > */}
       <StyledImage src={src} alt={title} />
-      {/* </Tilt> */}
       <StyledTextContainer>
         <p>{desc}</p>
         <StyledA href={link} target='_blank'>
