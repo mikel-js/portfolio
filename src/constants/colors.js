@@ -11,4 +11,5 @@ export const COLORS = {
   purple2: '#f2e6ff',
   purple3: '#253064',
   purple4: '#d09cfa',
+  purple5: '#cc66ff',
 };

@@ -58,7 +58,7 @@ const StyledCircle = styled.div<{ isActive: boolean }>`
   width: 1rem;
   border-radius: 50%;
   border: 1px solid ${COLORS.primaryDark};
-  background-color: ${({ isActive }) => isActive && COLORS.purple1};
+  background-color: ${({ isActive }) => isActive && COLORS.purple4};
 
   @media (min-width: ${BREAKPOINTS.md}) {
     height: 2rem;

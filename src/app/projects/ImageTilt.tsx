@@ -15,19 +15,15 @@ type ImageTiltProps = {
 const StyledImageTilt = styled.div<{ isActive: boolean }>`
   display: ${({ isActive }) => (isActive ? 'block' : 'none')};
   max-width: 33.75rem;
+  text-align: center;
 
   p {
     font-size: 0.7rem;
   }
 
-  a {
-    text-decoration: none;
-    color: ${COLORS.primaryDark};
-  }
-
   @media (min-width: ${BREAKPOINTS.lg}) {
     max-width: 58rem;
-
+    text-align: left;
     p {
       font-size: 1.5rem;
     }
@@ -48,9 +44,29 @@ const StyledImage = styled.img`
 `;
 
 const StyledTextContainer = styled.div`
-  height: 2rem;
-  @media (min-width: ${BREAKPOINTS.lg}) {
-    height: 5.4375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    min-height: 2rem;
+    @media (min-width: ${BREAKPOINTS.lg}) {
+      min-height: 5.4375rem;
+    }
+  }
+`;
+
+const StyledA = styled.a`
+  background-color: ${COLORS.purple5};
+  color: ${COLORS.white};
+  padding: 1rem;
+  border-radius: 0.875rem;
+  text-decoration: none;
+
+  &:hover {
+    color: ${COLORS.purple5};
+    background-color: ${COLORS.white};
   }
 `;
 
@@ -72,12 +88,10 @@ const ImageTilt: React.FC<ImageTiltProps> = ({
       <StyledImage src={src} alt={title} />
       {/* </Tilt> */}
       <StyledTextContainer>
-        <p>
-          {desc}{' '}
-          <a href={link} target='_blank'>
-            Link to the project.
-          </a>
-        </p>
+        <p>{desc}</p>
+        <StyledA href={link} target='_blank'>
+          Link to the project
+        </StyledA>
       </StyledTextContainer>
     </StyledImageTilt>
   );
