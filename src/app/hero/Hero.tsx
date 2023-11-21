@@ -79,16 +79,21 @@ const StyledLaptop = styled.img`
 
   @media (min-width: ${BREAKPOINTS.lg}) {
     display: block;
+    max-width: 15rem;
+  }
+
+  @media (min-width: ${BREAKPOINTS.xl}) { 
     max-width: 25rem;
   }
 
-  @media (min-width: ${BREAKPOINTS.xl}) 
- { position: absolute;
-  bottom: 5rem;
-  right: 5rem;  
-  max-width: 40rem;}
+  @media (min-width: 1400px) { 
+    position: absolute;
+    bottom: 5rem;
+    right: 5rem;  
+
   }
-`;
+
+}`;
 
 const Hero: React.FC = () => {
   const texts = [
