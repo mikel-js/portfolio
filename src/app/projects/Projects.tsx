@@ -119,6 +119,7 @@ const Projects: React.FC = () => {
         <StyledImageContainer>
           {projectsArr.map(({ src, title, desc, link }, index) => (
             <ImageTilt
+              key={index}
               isActive={activeIndex === index}
               src={src}
               title={title}

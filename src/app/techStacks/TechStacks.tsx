@@ -58,7 +58,7 @@ const TechStacks: React.FC = ({}) => {
         <StyledSection>
           <Bounce cascade damping={0.05} direction='down' triggerOnce>
             {iconArray.map(({ name, src }) => (
-              <StyledIconContainer>
+              <StyledIconContainer key={name}>
                 <StyledIcon key={name}>
                   <img alt={name} src={src} />
                 </StyledIcon>
