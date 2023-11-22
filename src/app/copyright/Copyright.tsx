@@ -4,7 +4,10 @@ import Container from '../base/Container';
 import { COLORS } from '@/constants/colors';
 import { BREAKPOINTS } from '@/constants/breakpoints';
 
-const StyledCopyright = styled.div``;
+const StyledCopyright = styled.div`
+  background-color: ${COLORS.white2};
+`;
+
 const StyledContainer = styled(Container)`
   display: flex;
   justify-content: center;
