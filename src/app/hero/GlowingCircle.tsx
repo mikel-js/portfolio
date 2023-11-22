@@ -30,7 +30,7 @@ const StyledCircle = styled.div`
   height: 40rem;
   border-radius: 50%;
   background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
-  animation: ${animate} 20s linear infinite;
+  animation: ${animate} 10s linear infinite;
   transform: translateZ(-10px) scale(2);
 
   &:before {
@@ -64,6 +64,7 @@ const StyledCircle = styled.div`
   @media (min-width: ${BREAKPOINTS.md}) {
     width: 70rem;
     height: 70rem;
+    animation: ${animate} 20s linear infinite;
     &:before,
     &:after {
       width: 70rem;
