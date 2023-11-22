@@ -5,7 +5,7 @@ interface SwipeHandlers {
   onSwipeRight?: () => void;
 }
 
-const SWIPE_THRESHOLD = 50;
+const SWIPE_THRESHOLD = 100;
 
 const useSwipe = ({ onSwipeLeft, onSwipeRight }: SwipeHandlers) => {
   const [startX, setStartX] = useState<number | null>(null);
@@ -23,11 +23,11 @@ const useSwipe = ({ onSwipeLeft, onSwipeRight }: SwipeHandlers) => {
 
       if (deltaX > SWIPE_THRESHOLD) {
         if (onSwipeRight) onSwipeRight();
+        setStartX(null);
       } else if (deltaX < -SWIPE_THRESHOLD) {
         if (onSwipeLeft) onSwipeLeft();
+        setStartX(null);
       }
-
-      setStartX(null);
     };
 
     document.addEventListener('touchstart', handleTouchStart);

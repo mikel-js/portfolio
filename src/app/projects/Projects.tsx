@@ -6,6 +6,7 @@ import ArrowLeft from './arrowLeft';
 import ArrowRight from './arrowRight';
 import { BREAKPOINTS } from '@/constants/breakpoints';
 import Container from '../base/Container';
+import useSwipe from '@/hooks/useSwipe';
 
 const StyledProjects = styled.div`
   background-color: ${COLORS.white2};
@@ -112,6 +113,11 @@ const Projects: React.FC = () => {
       setActiveIndex((prev) => (prev -= 1));
     }
   };
+
+  const swipeHandlers = useSwipe({
+    onSwipeLeft: handleNextClick,
+    onSwipeRight: handlePreviousClick,
+  });
   return (
     <StyledProjects>
       <Container>
@@ -125,6 +131,7 @@ const Projects: React.FC = () => {
               title={title}
               desc={desc}
               link={link}
+              {...swipeHandlers}
             />
           ))}
         </StyledImageContainer>
