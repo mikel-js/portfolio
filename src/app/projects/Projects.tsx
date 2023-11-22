@@ -23,6 +23,7 @@ const StyledImageContainer = styled.div`
 `;
 
 const StyledArrowLeft = styled(ArrowLeft)`
+  cursor: pointer;
   width: 3rem;
   position: absolute;
   top: 40%;
@@ -35,6 +36,7 @@ const StyledArrowLeft = styled(ArrowLeft)`
 `;
 
 const StyledArrowRight = styled(ArrowRight)`
+  cursor: pointer;
   width: 3rem;
   position: absolute;
   top: 40%;
