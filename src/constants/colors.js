@@ -1,5 +1,4 @@
 export const COLORS = {
-  secondaryDark: '#5f43b2',
   white: '#fff',
   white2: '#ffffff0d',
   black: '#000',
