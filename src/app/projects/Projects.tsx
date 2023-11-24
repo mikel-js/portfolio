@@ -10,7 +10,7 @@ import useSwipe from '@/hooks/useSwipe';
 
 const StyledProjects = styled.div`
   background-color: ${COLORS.white2};
-  color: ${COLORS.primaryDark};
+  color: ${COLORS.white};
   position: relative;
   transform-style: preserve-3d;
 `;
@@ -60,7 +60,7 @@ const StyledCircle = styled.div<{ isActive: boolean }>`
   height: 1rem;
   width: 1rem;
   border-radius: 50%;
-  border: 1px solid ${COLORS.primaryDark};
+  border: 1px solid ${COLORS.white};
   background-color: ${({ isActive }) => isActive && COLORS.purple4};
 
   @media (min-width: ${BREAKPOINTS.md}) {

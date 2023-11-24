@@ -14,7 +14,7 @@ const StyledProfile = styled.div`
   max-width: 72rem;
   position: relative;
   padding: 4rem 0;
-  color: ${COLORS.primaryDark};
+  color: ${COLORS.white};
 
   h3 {
     font-weight: 400;
@@ -71,7 +71,7 @@ const StyledName = styled.span`
   color: ${COLORS.secondary};
 `;
 const StyledUX = styled.span`
-  color: ${COLORS.primaryDark};
+  color: ${COLORS.white};
   font-size: 2rem;
 `;
 
