@@ -19,7 +19,7 @@ const StyledCircleContainer = styled.div`
   height: 100vh;
   transform-style: preserve-3d;
   perspective-origin-x: 100%;
-  transform: translateZ(-10px) scale(2);
+  transform: translateZ(-0.625rem) scale(2);
   z-index: 1000;
 `;
 
@@ -31,17 +31,17 @@ const StyledCircle = styled.div`
   border-radius: 50%;
   background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
   animation: ${animate} 10s linear infinite;
-  transform: translateZ(-10px) scale(2);
+  transform: translateZ(-0.625rem) scale(2);
 
   &:before {
     content: '';
     width: 40rem;
     height: 40rem;
     position: absolute;
-    top: 6px;
-    left: 6px;
-    right: 6px;
-    bottom: 6px;
+    top: 0.375rem;
+    left: 0.375rem;
+    right: 0.375rem;
+    bottom: 0.375rem;
     background: #000;
     border-radius: 50%;
     z-index: 1000;
@@ -58,7 +58,7 @@ const StyledCircle = styled.div`
     background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
     border-radius: 50%;
     z-index: 1;
-    filter: blur(30px);
+    filter: blur(1.875rem);
   }
 
   @media (min-width: ${BREAKPOINTS.md}) {

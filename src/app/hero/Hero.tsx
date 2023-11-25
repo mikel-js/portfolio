@@ -86,7 +86,7 @@ const StyledLaptop = styled.img`
     max-width: 25rem;
   }
 
-  @media (min-width: 1400px) { 
+  @media (min-width: 87.5rem) { 
     position: absolute;
     bottom: 5rem;
     right: 5rem;  
