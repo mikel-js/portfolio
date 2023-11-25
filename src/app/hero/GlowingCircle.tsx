@@ -51,10 +51,10 @@ const StyledCircle = styled.div`
     width: 40rem;
     height: 40rem;
     position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
+    top:0
+    left:0
+    right:0
+    bottom:0
     background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
     border-radius: 50%;
     z-index: 1;
