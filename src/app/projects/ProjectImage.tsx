@@ -25,6 +25,7 @@ const StyledProjectImage = styled.div<{ isActive: boolean }>`
   @media (min-width: ${BREAKPOINTS.lg}) {
     display: block;
     height: 100vh;
+    padding-top: 20rem;
     max-width: 58rem;
     text-align: left;
     p,

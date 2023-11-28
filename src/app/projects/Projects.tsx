@@ -15,11 +15,9 @@ const StyledProjects = styled.div`
   color: ${COLORS.white};
   position: relative;
   transform-style: preserve-3d;
-
-  @media (min-width: ${BREAKPOINTS.md}) {
-    scroll-snap-type: both mandatory;
-  }
 `;
+
+const StyledContainer = styled(Container)``;
 
 const StyledImageContainer = styled.div`
   display: flex;
@@ -28,31 +26,21 @@ const StyledImageContainer = styled.div`
   flex-direction: column;
 `;
 
-const StyledArrowLeft = styled(ArrowLeft)`
-  cursor: pointer;
-  width: 3rem;
-  position: static;
-  top: 40%;
-  display: none;
+const StyledProjectText = styled.div`
+  padding-top: 50px;
+  text-align: center;
+  color: orange;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
 
   @media (min-width: ${BREAKPOINTS.md}) {
-    display: block;
     position: absolute;
+    top: 0;
+    left: calc(50% - 75px);
   }
-  left: 5%;
-`;
-
-const StyledArrowRight = styled(ArrowRight)`
-  cursor: pointer;
-  width: 3rem;
-  position: absolute;
-  top: 40%;
-  display: none;
-
-  @media (min-width: ${BREAKPOINTS.md}) {
-    display: block;
-  }
-  right: 5%;
 `;
 
 const StyledCircleContainer = styled.div`
@@ -131,8 +119,10 @@ const Projects: React.FC = () => {
   });
   return (
     <StyledProjects>
-      <Container>
-        <h2>Projects</h2>
+      <StyledContainer>
+        <StyledProjectText>
+          <h2>Projects</h2>
+        </StyledProjectText>
         <StyledImageContainer>
           {projectsArr.map(({ src, title, desc, link }, index) => (
             <ProjectImage
@@ -155,7 +145,7 @@ const Projects: React.FC = () => {
             />
           ))}
         </StyledCircleContainer>
-      </Container>
+      </StyledContainer>
     </StyledProjects>
   );
 };
