@@ -21,4 +21,10 @@ h3 {
   perspective: 0.625rem;
   transform-style: preserve-3d;
   position: relative;
+  scroll-snap-type: both mandatory;
+  > div:not(:last-child) {
+    scroll-snap-align: center;
+    height: 100vh;
+    width: 100vw;
+  }
 }
