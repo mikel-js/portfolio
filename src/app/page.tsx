@@ -4,7 +4,7 @@ import Hero from './hero/Hero';
 import Profile from './profile/Profile';
 import Projects from './projects/Projects';
 import TechStacks from './techStacks/TechStacks';
-import Copyright from './copyright/Copyright';
+
 const page = () => {
   return (
     <div className='wrapper'>
@@ -12,7 +12,6 @@ const page = () => {
       <Profile />
       <Projects />
       <TechStacks />
-      <Copyright />
     </div>
   );
 };

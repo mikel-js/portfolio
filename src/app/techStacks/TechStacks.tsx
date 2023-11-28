@@ -6,10 +6,14 @@ import Container from '../base/Container';
 import { iconArray } from './iconsArray';
 import Image from 'next/image';
 import { Bounce } from 'react-awesome-reveal';
+import Copyright from '../copyright/Copyright';
 
 const StyledTechStacks = styled.div`
   color: ${COLORS.white};
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const StyledContainer = styled(Container)`
@@ -68,6 +72,7 @@ const TechStacks: React.FC = ({}) => {
           </Bounce>
         </StyledSection>
       </StyledContainer>
+      <Copyright />
     </StyledTechStacks>
   );
 };
