@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import { COLORS } from '@/constants/colors';
 
-type ImageTiltProps = {
+type ProjectImageProps = {
   isActive: boolean;
   src: string;
   title: string;
@@ -11,7 +11,7 @@ type ImageTiltProps = {
   link: string;
 };
 
-const StyledImageTilt = styled.div<{ isActive: boolean }>`
+const StyledProjectImage = styled.div<{ isActive: boolean }>`
   display: ${({ isActive }) => (isActive ? 'block' : 'none')};
   max-width: 33.75rem;
   text-align: center;
@@ -76,7 +76,7 @@ const StyledA = styled.a`
   }
 `;
 
-const ImageTilt: React.FC<ImageTiltProps> = ({
+const ProjectImage: React.FC<ProjectImageProps> = ({
   isActive,
   src,
   title,
@@ -84,7 +84,7 @@ const ImageTilt: React.FC<ImageTiltProps> = ({
   link,
 }) => {
   return (
-    <StyledImageTilt isActive={isActive}>
+    <StyledProjectImage isActive={isActive}>
       <StyledImage src={src} alt={title} />
       <StyledTextContainer>
         <p>{desc}</p>
@@ -92,8 +92,8 @@ const ImageTilt: React.FC<ImageTiltProps> = ({
           Link to the project
         </StyledA>
       </StyledTextContainer>
-    </StyledImageTilt>
+    </StyledProjectImage>
   );
 };
 
-export default ImageTilt;
+export default ProjectImage;
