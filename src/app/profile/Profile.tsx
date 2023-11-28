@@ -23,6 +23,7 @@ const StyledProfile = styled.div`
   @media (min-width: ${BREAKPOINTS.md}) {
     flex-direction: row;
     align-items: flex-start;
+    padding: 20rem 0 4rem 0;
   }
 `;
 
@@ -87,6 +88,7 @@ const StyledLogo = styled.div`
   }
 
   @media (min-width: ${BREAKPOINTS.md}) {
+    top: 23rem;
     left: -9rem;
     opacity: 0.5;
     img {
@@ -106,6 +108,7 @@ const StyledCircle = styled.div`
   display: none;
 
   @media (min-width: ${BREAKPOINTS.md}) {
+    top: 38rem;
     left: -3rem;
     height: 12rem;
     width: 12rem;
