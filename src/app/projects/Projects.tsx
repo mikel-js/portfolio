@@ -9,6 +9,8 @@ import Container from '../base/Container';
 import useSwipe from '@/hooks/useSwipe';
 
 const StyledProjects = styled.div`
+  height: 100vh;
+  width: 100vw;
   background-color: ${COLORS.white2};
   color: ${COLORS.white};
   position: relative;
