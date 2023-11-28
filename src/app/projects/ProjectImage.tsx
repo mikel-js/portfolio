@@ -15,6 +15,7 @@ const StyledProjectImage = styled.div<{ isActive: boolean }>`
   display: ${({ isActive }) => (isActive ? 'block' : 'none')};
   max-width: 33.75rem;
   text-align: center;
+  scroll-snap-align: center;
 
   p,
   a {
@@ -22,6 +23,8 @@ const StyledProjectImage = styled.div<{ isActive: boolean }>`
   }
 
   @media (min-width: ${BREAKPOINTS.lg}) {
+    display: block;
+    height: 100vh;
     max-width: 58rem;
     text-align: left;
     p,

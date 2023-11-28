@@ -1,7 +1,7 @@
 import { COLORS } from '@/constants/colors';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import ImageTilt from './ImageTilt';
+import ProjectImage from './ProjectImage';
 import ArrowLeft from './arrowLeft';
 import ArrowRight from './arrowRight';
 import { BREAKPOINTS } from '@/constants/breakpoints';
@@ -9,12 +9,16 @@ import Container from '../base/Container';
 import useSwipe from '@/hooks/useSwipe';
 
 const StyledProjects = styled.div`
-  height: 100vh;
+  height: auto !important;
   width: 100vw;
   background-color: ${COLORS.white2};
   color: ${COLORS.white};
   position: relative;
   transform-style: preserve-3d;
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    scroll-snap-type: both mandatory;
+  }
 `;
 
 const StyledImageContainer = styled.div`
@@ -27,12 +31,13 @@ const StyledImageContainer = styled.div`
 const StyledArrowLeft = styled(ArrowLeft)`
   cursor: pointer;
   width: 3rem;
-  position: absolute;
+  position: static;
   top: 40%;
   display: none;
 
   @media (min-width: ${BREAKPOINTS.md}) {
     display: block;
+    position: absolute;
   }
   left: 5%;
 `;
@@ -58,6 +63,7 @@ const StyledCircleContainer = styled.div`
 `;
 
 const StyledCircle = styled.div<{ isActive: boolean }>`
+  display: block;
   cursor: pointer;
   height: 1rem;
   width: 1rem;
@@ -68,6 +74,7 @@ const StyledCircle = styled.div<{ isActive: boolean }>`
   @media (min-width: ${BREAKPOINTS.md}) {
     height: 2rem;
     width: 2rem;
+    display: none;
   }
 `;
 
@@ -128,7 +135,7 @@ const Projects: React.FC = () => {
         <h2>Projects</h2>
         <StyledImageContainer>
           {projectsArr.map(({ src, title, desc, link }, index) => (
-            <ImageTilt
+            <ProjectImage
               key={index}
               isActive={activeIndex === index}
               src={src}
@@ -148,8 +155,6 @@ const Projects: React.FC = () => {
             />
           ))}
         </StyledCircleContainer>
-        <StyledArrowLeft onClick={handlePreviousClick} />
-        <StyledArrowRight onClick={handleNextClick} />
       </Container>
     </StyledProjects>
   );
