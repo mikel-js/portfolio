@@ -28,6 +28,7 @@ const StyledProjectImage = styled.div<{ isActive: boolean }>`
     padding-top: 20rem;
     max-width: 58rem;
     text-align: left;
+
     p,
     a {
       font-size: 1.5rem;
@@ -56,6 +57,7 @@ const StyledTextContainer = styled.div`
 
   p {
     min-height: 6rem;
+
     @media (min-width: ${BREAKPOINTS.lg}) {
       min-height: 5.4375rem;
     }

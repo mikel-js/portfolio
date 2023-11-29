@@ -97,6 +97,7 @@ const StyledLogo = styled.div`
     }
   }
 `;
+
 const StyledCircle = styled.div`
   position: absolute;
   top: 18rem;
