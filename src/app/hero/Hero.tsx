@@ -95,37 +95,38 @@ const StyledLaptop = styled.img`
 
 }`;
 
+const texts = [
+  <h2>
+    <StyledPurpleText>E</StyledPurpleText>
+    <StyledSmallText>xcellent</StyledSmallText>
+  </h2>,
+  <h2>
+    <StyledPurpleText>E</StyledPurpleText>
+    <StyledSmallText>nthusiastic</StyledSmallText>
+  </h2>,
+  <h2>
+    <StyledPurpleText>E</StyledPurpleText>
+    <StyledSmallText>fficient</StyledSmallText>
+  </h2>,
+  <h2>
+    <StyledPurpleText>E</StyledPurpleText>
+    <StyledSmallText>ager</StyledSmallText>
+  </h2>,
+  <h2>
+    <StyledPurpleText>E</StyledPurpleText>
+    <StyledSmallText>ffective</StyledSmallText>
+  </h2>,
+  <h2>
+    <StyledPurpleText>E</StyledPurpleText>
+    <StyledSmallText>nergetic</StyledSmallText>
+  </h2>,
+  <h2>
+    <StyledPurpleText>E</StyledPurpleText>
+    <StyledSmallText>asy-going</StyledSmallText>
+  </h2>,
+];
+
 const Hero: React.FC = () => {
-  const texts = [
-    <h2>
-      <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>xcellent</StyledSmallText>
-    </h2>,
-    <h2>
-      <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>nthusiastic</StyledSmallText>
-    </h2>,
-    <h2>
-      <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>fficient</StyledSmallText>
-    </h2>,
-    <h2>
-      <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>ager</StyledSmallText>
-    </h2>,
-    <h2>
-      <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>ffective</StyledSmallText>
-    </h2>,
-    <h2>
-      <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>nergetic</StyledSmallText>
-    </h2>,
-    <h2>
-      <StyledPurpleText>E</StyledPurpleText>
-      <StyledSmallText>asy-going</StyledSmallText>
-    </h2>,
-  ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   useEffect(() => {
