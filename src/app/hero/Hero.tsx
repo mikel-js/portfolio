@@ -126,6 +126,19 @@ const texts = [
   </h2>,
 ];
 
+const profileText = (
+  <>
+    <h1>
+      <StyledPurpleText>M</StyledPurpleText>
+      <StyledSmallText>ichael </StyledSmallText>
+      <StyledPurpleText>C</StyledPurpleText>
+      <StyledSmallText>astro</StyledSmallText>
+    </h1>
+    <h2>Welcome to my Portfolio Site!</h2>
+    <h3>Excited to see you here</h3>
+  </>
+);
+
 const Hero: React.FC = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
@@ -145,16 +158,7 @@ const Hero: React.FC = () => {
           {texts[currentTextIndex]}
         </StyledFade>
       </StyledFadingTextContainer>
-      <StyledContent>
-        <h1>
-          <StyledPurpleText>M</StyledPurpleText>
-          <StyledSmallText>ichael </StyledSmallText>
-          <StyledPurpleText>C</StyledPurpleText>
-          <StyledSmallText>astro</StyledSmallText>
-        </h1>
-        <h2>Welcome to my Portfolio Site!</h2>
-        <h3>Excited to see you here</h3>
-      </StyledContent>
+      <StyledContent>{profileText}</StyledContent>
       <GlowingComponent />
       <StyledLaptop src='assets/laptop1.png' />
     </StyledHero>
