@@ -6,7 +6,7 @@ import Container from '../base/Container';
 import { iconArray } from './iconsArray';
 import Image from 'next/image';
 import { Bounce } from 'react-awesome-reveal';
-import Copyright from '../copyright/Copyright';
+import Copyright from './Copyright';
 
 const StyledTechStacks = styled.div`
   color: ${COLORS.white};
