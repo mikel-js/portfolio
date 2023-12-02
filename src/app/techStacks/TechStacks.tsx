@@ -4,7 +4,6 @@ import { BREAKPOINTS } from '../../constants/breakpoints';
 import { COLORS } from '@/constants/colors';
 import Container from '../base/Container';
 import { iconArray } from './iconsArray';
-import Image from 'next/image';
 import { Bounce } from 'react-awesome-reveal';
 import Copyright from './Copyright';
 
