@@ -4,11 +4,11 @@ import Container from '../base/Container';
 import { COLORS } from '@/constants/colors';
 import { BREAKPOINTS } from '@/constants/breakpoints';
 
-const StyledCopyright = styled.div`
+const StyledCopyrightContainer = styled.div`
   background-color: ${COLORS.white2};
 `;
 
-const StyledContainer = styled(Container)`
+const StyledContentContainer = styled(Container)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@ const StyledContainer = styled(Container)`
   color: ${COLORS.white};
 `;
 
-const StyledImg = styled.img`
+const StyledIcon = styled.img`
   width: 3rem;
   height: 3rem;
 
@@ -24,6 +24,11 @@ const StyledImg = styled.img`
     width: 6.25rem;
     height: 6.25rem;
   }
+`;
+
+const ExternalLink = styled.a`
+  text-decoration: none;
+  color: inherit;
 `;
 
 const Copyright: React.FC = () => {
@@ -39,19 +44,24 @@ const Copyright: React.FC = () => {
       linkTo: 'https://github.com/mikel-js',
     },
   ];
+
   return (
-    <StyledCopyright>
-      <StyledContainer>
+    <StyledCopyrightContainer>
+      <StyledContentContainer>
         <p>Copyright © 2023</p>
         {externalLinks.map(({ name, src, linkTo }) => (
-          <a href={linkTo} key={name} target='_blank'>
-            <StyledImg alt={name} src={src} />
-          </a>
+          <ExternalLink
+            href={linkTo}
+            key={name}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <StyledIcon alt={name} src={src} />
+          </ExternalLink>
         ))}
-
         <p>Michael Castro</p>
-      </StyledContainer>
-    </StyledCopyright>
+      </StyledContentContainer>
+    </StyledCopyrightContainer>
   );
 };
 
