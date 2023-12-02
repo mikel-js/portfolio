@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Bounce } from 'react-awesome-reveal';
+
+import Container from '../base/Container';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import { COLORS } from '@/constants/colors';
-import Container from '../base/Container';
 import { iconArray } from './iconsArray';
-import { Bounce } from 'react-awesome-reveal';
 import Copyright from './Copyright';
 
 const StyledTechStacks = styled.div`
@@ -23,12 +24,13 @@ const StyledContainer = styled(Container)`
 const StyledSection = styled.div`
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 
   @media (min-width: ${BREAKPOINTS.md}) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
   }
 `;
+
 const StyledIconContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -53,7 +55,7 @@ const StyledIcon = styled.div`
   }
 `;
 
-const TechStacks: React.FC = ({}) => {
+const TechStacks: React.FC = () => {
   return (
     <StyledTechStacks>
       <StyledContainer>
