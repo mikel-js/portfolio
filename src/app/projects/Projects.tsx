@@ -37,7 +37,7 @@ const StyledProjectText = styled.div`
   @media (min-width: ${BREAKPOINTS.md}) {
     position: absolute;
     top: 0;
-    left: calc(50% - 75px);
+    left: calc(50% - 4.6875rem);
   }
 `;
 
