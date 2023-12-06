@@ -25,7 +25,7 @@ const StyledImageContainer = styled.div`
 `;
 
 const StyledProjectText = styled.div`
-  padding-top: 50px;
+  padding-top: 3.125rem;
   text-align: center;
   color: orange;
 
