@@ -7,12 +7,12 @@ import TechStacks from './techStacks/TechStacks';
 
 const page = () => {
   return (
-    <div className='wrapper'>
+    <>
       <Hero />
       <Profile />
       <Projects />
       <TechStacks />
-    </div>
+    </>
   );
 };
 
