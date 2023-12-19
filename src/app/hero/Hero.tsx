@@ -42,6 +42,7 @@ const StyledContent = styled.div`
 const StyledPurpleText = styled.span`
   color: ${COLORS.purple4};
 `;
+
 const StyledSmallText = styled.span`
   font-size: 3rem;
 `;
