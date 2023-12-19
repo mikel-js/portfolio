@@ -13,6 +13,7 @@ filter:hue-rotate(0deg);
   filter:hue-rotate(360deg);
 }
 `;
+
 const StyledCircleContainer = styled.div`
   position: absolute;
   width: 100vw;
@@ -32,7 +33,6 @@ const StyledCircle = styled.div`
   background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
   animation: ${animate} 10s linear infinite;
   transform: translateZ(-0.625rem) scale(2);
-
   &:before {
     content: '';
     width: 40rem;
@@ -60,7 +60,6 @@ const StyledCircle = styled.div`
     z-index: 1;
     filter: blur(1.875rem);
   }
-
   @media (min-width: ${BREAKPOINTS.md}) {
     width: 70rem;
     height: 70rem;
