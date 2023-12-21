@@ -45,6 +45,7 @@ const StyledIcon = styled.div`
   border-radius: 50%;
 
   img {
+    cursor: pointer;
     width: 3.75rem;
     height: 3.75rem;
     transition: transform 0.2s;
