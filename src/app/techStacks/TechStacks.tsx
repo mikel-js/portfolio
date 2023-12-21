@@ -47,6 +47,11 @@ const StyledIcon = styled.div`
   img {
     width: 3.75rem;
     height: 3.75rem;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
 
     @media (min-width: ${BREAKPOINTS.md}) {
       width: 5.25rem;
