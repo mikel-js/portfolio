@@ -71,6 +71,7 @@ const StyledBox = styled.div`
 const StyledName = styled.span`
   color: ${COLORS.purple6};
 `;
+
 const StyledUX = styled.span`
   color: ${COLORS.white};
   font-size: 2rem;
