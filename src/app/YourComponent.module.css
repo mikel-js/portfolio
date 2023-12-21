@@ -14,33 +14,33 @@
 
 .fadeIn {
   opacity: 1;
-  font-size: 3em; /* Starting font size */
-  animation: fadeIn 1s forwards; /* Duration of 1s, stays in the end state after animation */
+  font-size: 3em; 
+  animation: fadeIn 1s forwards;
 }
 
 .fadeInOut {
   opacity: 1;
-  font-size: 3em; /* Starting font size */
-  animation: fadeInOut 4s infinite; /* Change the duration according to your needs */
+  font-size: 3em;
+  animation: fadeInOut 4s infinite;
 
   @keyframes fadeInOut {
     0%, 100% {
       opacity: 0;
-      font-size: 3em; /* Starting font size */
+      font-size: 3em;
     }
     50% {
       opacity: 1;
-      font-size: 2em; /* Ending font size */
+      font-size: 2em;
     }
   }
 }
 
 .visible {
   opacity: 1;
-  font-size: 3em; /* Starting font size */
+  font-size: 3em;
 }
 
 .hidden {
   opacity: 0;
-  font-size: 2em; /* Ending font size */
+  font-size: 2em;
 }
